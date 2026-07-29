@@ -6,7 +6,14 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { useCart } from "@/components/cart";
 import { track } from "@/lib/analytics";
 import { msgProduto, site } from "@/config/site";
-import { brl, getProduto, nomeCategoria, porCategoria, type Produto } from "@/data/products";
+import {
+  brl,
+  getProduto,
+  nomeCategoria,
+  porCategoria,
+  type Produto,
+  type Tamanho,
+} from "@/data/products";
 
 export const Route = createFileRoute("/produto/$slug")({
   loader: ({ params }) => {
@@ -107,7 +114,7 @@ function ProdutoPage() {
                 Tamanhos disponíveis
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
-                {produto.tamanhos.map((t: string) => (
+                {produto.tamanhos.map((t: Tamanho) => (
                   <button
                     key={t}
                     onClick={() => setTamanho(t)}
