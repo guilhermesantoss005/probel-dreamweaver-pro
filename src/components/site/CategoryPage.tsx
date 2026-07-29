@@ -1,0 +1,93 @@
+import { useMemo, useState } from "react";
+import { ProductCard } from "./ProductCard";
+import { WhatsAppButton } from "./WhatsAppButton";
+import { MSG_GERAL } from "@/config/site";
+import { TAMANHOS, type Produto } from "@/data/products";
+import bannerImg from "@/assets/banner-categoria.jpg";
+
+type Props = {
+  titulo: string;
+  descricao: string;
+  produtos: Produto[];
+  imagem?: string;
+};
+
+export function CategoryPage({ titulo, descricao, produtos, imagem = bannerImg }: Props) {
+  const [tamanho, setTamanho] = useState<string>("Todos");
+  const [ordem, setOrdem] = useState<string>("relevancia");
+
+  const lista = useMemo(() => {
+    let l = produtos.filter((p) => tamanho === "Todos" || p.tamanhos.includes(tamanho as never));
+    if (ordem === "menor") l = [...l].sort((a, b) => a.preco - b.preco);
+    if (ordem === "maior") l = [...l].sort((a, b) => b.preco - a.preco);
+    return l;
+  }, [produtos, tamanho, ordem]);
+
+  return (
+    <>
+      <section className="relative isolate overflow-hidden">
+        <img
+          src={imagem}
+          alt={titulo}
+          loading="lazy"
+          className="absolute inset-0 -z-10 size-full object-cover"
+        />
+        <div className="absolute inset-0 -z-10 bg-navy-deep/75" />
+        <div className="container-page py-16 text-primary-foreground sm:py-20">
+          <h1 className="text-3xl font-bold sm:text-4xl">{titulo}</h1>
+          <p className="mt-3 max-w-xl text-sm text-primary-foreground/80 sm:text-base">
+            {descricao}
+          </p>
+        </div>
+      </section>
+
+      <section className="container-page py-10">
+        <div className="flex flex-wrap items-center gap-2 border-b border-border pb-5">
+          <span className="mr-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Tamanho
+          </span>
+          {["Todos", ...TAMANHOS].map((t) => (
+            <button
+              key={t}
+              onClick={() => setTamanho(t)}
+              className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                tamanho === t
+                  ? "border-accent bg-accent text-accent-foreground"
+                  : "border-border text-navy hover:border-accent hover:text-accent"
+              }`}
+            >
+              {t}
+            </button>
+          ))}
+          <select
+            value={ordem}
+            onChange={(e) => setOrdem(e.target.value)}
+            aria-label="Ordenar produtos"
+            className="ml-auto rounded-full border border-border bg-background px-3 py-1.5 text-sm text-navy"
+          >
+            <option value="relevancia">Relevância</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+          </select>
+        </div>
+
+        {lista.length > 0 ? (
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {lista.map((p) => (
+              <ProductCard key={p.slug} produto={p} />
+            ))}
+          </div>
+        ) : (
+          <div className="mt-12 rounded-2xl border border-dashed border-border p-10 text-center">
+            <p className="text-sm text-muted-foreground">
+              Nenhum produto encontrado com esse filtro.
+            </p>
+            <WhatsAppButton mensagem={MSG_GERAL} className="mt-5">
+              Consultar disponibilidade
+            </WhatsAppButton>
+          </div>
+        )}
+      </section>
+    </>
+  );
+}
