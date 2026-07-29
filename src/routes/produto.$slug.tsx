@@ -6,7 +6,7 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { useCart } from "@/components/cart";
 import { track } from "@/lib/analytics";
 import { msgProduto, site } from "@/config/site";
-import { brl, getProduto, nomeCategoria, porCategoria } from "@/data/products";
+import { brl, getProduto, nomeCategoria, porCategoria, type Produto } from "@/data/products";
 
 export const Route = createFileRoute("/produto/$slug")({
   loader: ({ params }) => {
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/produto/$slug")({
 });
 
 function ProdutoPage() {
-  const { produto } = Route.useLoaderData();
+  const { produto } = Route.useLoaderData() as { produto: Produto };
   const { add } = useCart();
   const [img, setImg] = useState(0);
   const [tamanho, setTamanho] = useState(produto.tamanhos[0]);
@@ -68,7 +68,7 @@ function ProdutoPage() {
             </div>
             {produto.imagens.length > 1 && (
               <div className="mt-3 flex gap-3">
-                {produto.imagens.map((src, i) => (
+                {produto.imagens.map((src: string, i: number) => (
                   <button
                     key={src + i}
                     onClick={() => setImg(i)}
@@ -107,7 +107,7 @@ function ProdutoPage() {
                 Tamanhos disponíveis
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
-                {produto.tamanhos.map((t) => (
+                {produto.tamanhos.map((t: string) => (
                   <button
                     key={t}
                     onClick={() => setTamanho(t)}
@@ -126,7 +126,7 @@ function ProdutoPage() {
             <p className="mt-6 text-sm text-muted-foreground">{produto.descricao}</p>
 
             <ul className="mt-5 space-y-2">
-              {produto.caracteristicas.map((c) => (
+              {produto.caracteristicas.map((c: string) => (
                 <li key={c} className="flex gap-2 text-sm text-navy">
                   <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                   {c}
