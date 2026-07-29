@@ -82,14 +82,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Probel Store — Colchões e Conjuntos Box" },
+      { title: "Probel Store — Colchões, Conjuntos Box e Travesseiros" },
       {
         name: "description",
         content:
-          "Loja autorizada Probel Colchões. Colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp.",
+          "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Probel Store — Colchões, Conjuntos Box e Travesseiros" },
+      { name: "twitter:title", content: "Probel Store — Colchões, Conjuntos Box e Travesseiros" },
+      { property: "og:description", content: "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp." },
+      { name: "twitter:description", content: "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a781b0aa-0462-4d0a-89f6-cdf9dc79fb34/id-preview-d06a2985--7b98c11e-f090-4685-9ae7-1db6176e9525.lovable.app-1785349503157.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a781b0aa-0462-4d0a-89f6-cdf9dc79fb34/id-preview-d06a2985--7b98c11e-f090-4685-9ae7-1db6176e9525.lovable.app-1785349503157.png" },
     ],
     links: [
       {

@@ -25,10 +25,10 @@ export const Route = createFileRoute("/")({
         content:
           "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp.",
       },
-      { property: "og:title", content: "Probel Store — Seu descanso começa aqui" },
+      { property: "og:title", content: "Probel Store — Colchões, Conjuntos Box e Travesseiros" },
       {
         property: "og:description",
-        content: "Colchões e conjuntos box com atendimento personalizado e compra pelo WhatsApp.",
+        content: "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp.",
       },
     ],
   }),
