@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TravesseirosRouteImport } from './routes/travesseiros'
+import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as ConjuntosBoxRouteImport } from './routes/conjuntos-box'
+import { Route as ColchoesRouteImport } from './routes/colchoes'
+import { Route as CabeceirasRouteImport } from './routes/cabeceiras'
+import { Route as BoxBauRouteImport } from './routes/box-bau'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TravesseirosRoute = TravesseirosRouteImport.update({
+  id: '/travesseiros',
+  path: '/travesseiros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertasRoute = OfertasRouteImport.update({
+  id: '/ofertas',
+  path: '/ofertas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConjuntosBoxRoute = ConjuntosBoxRouteImport.update({
+  id: '/conjuntos-box',
+  path: '/conjuntos-box',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColchoesRoute = ColchoesRouteImport.update({
+  id: '/colchoes',
+  path: '/colchoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CabeceirasRoute = CabeceirasRouteImport.update({
+  id: '/cabeceiras',
+  path: '/cabeceiras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoxBauRoute = BoxBauRouteImport.update({
+  id: '/box-bau',
+  path: '/box-bau',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/box-bau': typeof BoxBauRoute
+  '/cabeceiras': typeof CabeceirasRoute
+  '/colchoes': typeof ColchoesRoute
+  '/conjuntos-box': typeof ConjuntosBoxRoute
+  '/ofertas': typeof OfertasRoute
+  '/travesseiros': typeof TravesseirosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/box-bau': typeof BoxBauRoute
+  '/cabeceiras': typeof CabeceirasRoute
+  '/colchoes': typeof ColchoesRoute
+  '/conjuntos-box': typeof ConjuntosBoxRoute
+  '/ofertas': typeof OfertasRoute
+  '/travesseiros': typeof TravesseirosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/box-bau': typeof BoxBauRoute
+  '/cabeceiras': typeof CabeceirasRoute
+  '/colchoes': typeof ColchoesRoute
+  '/conjuntos-box': typeof ConjuntosBoxRoute
+  '/ofertas': typeof OfertasRoute
+  '/travesseiros': typeof TravesseirosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/box-bau'
+    | '/cabeceiras'
+    | '/colchoes'
+    | '/conjuntos-box'
+    | '/ofertas'
+    | '/travesseiros'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/box-bau'
+    | '/cabeceiras'
+    | '/colchoes'
+    | '/conjuntos-box'
+    | '/ofertas'
+    | '/travesseiros'
+  id:
+    | '__root__'
+    | '/'
+    | '/box-bau'
+    | '/cabeceiras'
+    | '/colchoes'
+    | '/conjuntos-box'
+    | '/ofertas'
+    | '/travesseiros'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BoxBauRoute: typeof BoxBauRoute
+  CabeceirasRoute: typeof CabeceirasRoute
+  ColchoesRoute: typeof ColchoesRoute
+  ConjuntosBoxRoute: typeof ConjuntosBoxRoute
+  OfertasRoute: typeof OfertasRoute
+  TravesseirosRoute: typeof TravesseirosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/travesseiros': {
+      id: '/travesseiros'
+      path: '/travesseiros'
+      fullPath: '/travesseiros'
+      preLoaderRoute: typeof TravesseirosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ofertas': {
+      id: '/ofertas'
+      path: '/ofertas'
+      fullPath: '/ofertas'
+      preLoaderRoute: typeof OfertasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conjuntos-box': {
+      id: '/conjuntos-box'
+      path: '/conjuntos-box'
+      fullPath: '/conjuntos-box'
+      preLoaderRoute: typeof ConjuntosBoxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/colchoes': {
+      id: '/colchoes'
+      path: '/colchoes'
+      fullPath: '/colchoes'
+      preLoaderRoute: typeof ColchoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cabeceiras': {
+      id: '/cabeceiras'
+      path: '/cabeceiras'
+      fullPath: '/cabeceiras'
+      preLoaderRoute: typeof CabeceirasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/box-bau': {
+      id: '/box-bau'
+      path: '/box-bau'
+      fullPath: '/box-bau'
+      preLoaderRoute: typeof BoxBauRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BoxBauRoute: BoxBauRoute,
+  CabeceirasRoute: CabeceirasRoute,
+  ColchoesRoute: ColchoesRoute,
+  ConjuntosBoxRoute: ConjuntosBoxRoute,
+  OfertasRoute: OfertasRoute,
+  TravesseirosRoute: TravesseirosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
