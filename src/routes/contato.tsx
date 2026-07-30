@@ -48,6 +48,31 @@ function Contato() {
       <WhatsAppButton mensagem={MSG_GERAL} evento="Lead" className="mt-10 px-7 py-3.5 text-base">
         Conversar pelo WhatsApp
       </WhatsAppButton>
+
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold text-navy">Onde estamos</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          {site.endereco} — {site.cidade}
+        </p>
+        <div className="mt-5 overflow-hidden rounded-2xl border border-border">
+          <iframe
+            title="Mapa da loja"
+            src={site.mapsEmbed}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[380px] w-full border-0"
+          />
+        </div>
+        <a
+          href={site.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 rounded-full border border-navy/20 px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-secondary"
+        >
+          Ver no Google Maps
+        </a>
+      </div>
+
       <p className="mt-8 text-xs text-muted-foreground">{site.aviso}</p>
     </section>
   );
