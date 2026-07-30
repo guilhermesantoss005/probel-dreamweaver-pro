@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MSG_GERAL, site, whatsappUrl } from "@/config/site";
 
 const institucional = [
@@ -32,7 +32,6 @@ export function Footer() {
           <div className="mt-5 flex gap-2">
             {[
               { href: site.instagram, Icon: Instagram, label: "Instagram" },
-              { href: site.facebook, Icon: Facebook, label: "Facebook" },
               { href: whatsappUrl(MSG_GERAL), Icon: MessageCircle, label: "WhatsApp" },
             ].map(({ href, Icon, label }) => (
               <a
