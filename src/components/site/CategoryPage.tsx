@@ -14,14 +14,9 @@ type Props = {
 
 export function CategoryPage({ titulo, descricao, produtos, imagem = bannerImg }: Props) {
   const [tamanho, setTamanho] = useState<string>("Todos");
-  const [ordem, setOrdem] = useState<string>("relevancia");
-
   const lista = useMemo(() => {
-    let l = produtos.filter((p) => tamanho === "Todos" || p.tamanhos.includes(tamanho as never));
-    if (ordem === "menor") l = [...l].sort((a, b) => a.preco - b.preco);
-    if (ordem === "maior") l = [...l].sort((a, b) => b.preco - a.preco);
-    return l;
-  }, [produtos, tamanho, ordem]);
+    return produtos.filter((p) => tamanho === "Todos" || p.tamanhos.includes(tamanho as never));
+  }, [produtos, tamanho]);
 
   return (
     <>
@@ -59,16 +54,6 @@ export function CategoryPage({ titulo, descricao, produtos, imagem = bannerImg }
               {t}
             </button>
           ))}
-          <select
-            value={ordem}
-            onChange={(e) => setOrdem(e.target.value)}
-            aria-label="Ordenar produtos"
-            className="ml-auto rounded-full border border-border bg-background px-3 py-1.5 text-sm text-navy"
-          >
-            <option value="relevancia">Relevância</option>
-            <option value="menor">Menor preço</option>
-            <option value="maior">Maior preço</option>
-          </select>
         </div>
 
         {lista.length > 0 ? (

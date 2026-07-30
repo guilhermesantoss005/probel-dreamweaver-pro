@@ -11,11 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { TopBar } from "../components/site/TopBar";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
-import { CartProvider } from "../components/cart";
 
 function NotFoundComponent() {
   return (
@@ -136,9 +134,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <div className="flex min-h-screen flex-col">
-          <TopBar />
+      <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">
             {/* Required: nested routes render here. */}
@@ -147,7 +143,6 @@ function RootComponent() {
           <Footer />
           <WhatsAppFloat />
         </div>
-      </CartProvider>
     </QueryClientProvider>
   );
 }

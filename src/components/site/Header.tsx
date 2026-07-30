@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Menu, Search, ShoppingCart, X } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { WhatsAppButton } from "./WhatsAppButton";
-import { CartSheet } from "./CartSheet";
-import { useCart } from "@/components/cart";
 import { MSG_GERAL, site } from "@/config/site";
 import { track } from "@/lib/analytics";
 
@@ -67,7 +65,6 @@ function SearchBox({ onDone }: { onDone?: () => void }) {
 }
 
 export function Header() {
-  const { quantidade, setAberto } = useCart();
   const [menu, setMenu] = useState(false);
 
   return (
@@ -81,18 +78,6 @@ export function Header() {
           <WhatsAppButton mensagem={MSG_GERAL} className="hidden md:inline-flex">
             Falar no WhatsApp
           </WhatsAppButton>
-          <button
-            onClick={() => setAberto(true)}
-            aria-label="Abrir carrinho"
-            className="relative grid size-10 shrink-0 place-items-center rounded-full text-navy transition-colors hover:bg-secondary"
-          >
-            <ShoppingCart className="size-5" />
-            {quantidade > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 grid size-4.5 min-w-[18px] place-items-center rounded-full bg-accent px-1 text-[10px] font-bold text-accent-foreground">
-                {quantidade}
-              </span>
-            )}
-          </button>
           <Sheet open={menu} onOpenChange={setMenu}>
             <SheetTrigger asChild>
               <button
@@ -155,8 +140,6 @@ export function Header() {
           ))}
         </div>
       </nav>
-
-      <CartSheet />
     </header>
   );
 }
