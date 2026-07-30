@@ -277,6 +277,15 @@ function Index() {
                 <dd className="font-semibold text-navy">{site.horario}</dd>
               </div>
             </dl>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-border">
+              <iframe
+                title="Mapa da loja"
+                src={site.mapsEmbed}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[280px] w-full border-0"
+              />
+            </div>
             <Link
               to="/sobre"
               className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"

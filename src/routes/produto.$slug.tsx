@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { Check, ShoppingCart } from "lucide-react";
+import { Check } from "lucide-react";
 import { ProductCard } from "@/components/site/ProductCard";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
-import { useCart } from "@/components/cart";
 import { track } from "@/lib/analytics";
 import { msgProduto, site } from "@/config/site";
 import {
-  brl,
   getProduto,
   nomeCategoria,
   porCategoria,
@@ -40,14 +38,13 @@ export const Route = createFileRoute("/produto/$slug")({
 
 function ProdutoPage() {
   const { produto } = Route.useLoaderData() as { produto: Produto };
-  const { add } = useCart();
   const [img, setImg] = useState(0);
   const [tamanho, setTamanho] = useState(produto.tamanhos[0]);
 
   useEffect(() => {
     setImg(0);
     setTamanho(produto.tamanhos[0]);
-    track("ViewContent", { content_name: produto.nome, value: produto.preco, currency: "BRL" });
+    track("ViewContent", { content_name: produto.nome });
   }, [produto]);
 
   const relacionados = porCategoria(produto.categoria)
@@ -74,7 +71,7 @@ function ProdutoPage() {
               />
             </div>
             {produto.imagens.length > 1 && (
-              <div className="mt-3 flex gap-3">
+              <div className="mt-3 flex flex-wrap gap-3">
                 {produto.imagens.map((src: string, i: number) => (
                   <button
                     key={src + i}
@@ -96,18 +93,6 @@ function ProdutoPage() {
               {nomeCategoria(produto.categoria)}
             </span>
             <h1 className="mt-1 text-3xl font-bold text-navy sm:text-4xl">{produto.nome}</h1>
-
-            <div className="mt-6">
-              {produto.precoDe && (
-                <span className="text-sm text-muted-foreground line-through">
-                  {brl(produto.precoDe)}
-                </span>
-              )}
-              <div className="font-display text-4xl font-bold text-navy">{brl(produto.preco)}</div>
-              {produto.parcelas && (
-                <span className="text-sm text-muted-foreground">{produto.parcelas}</span>
-              )}
-            </div>
 
             <div className="mt-6">
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -141,35 +126,62 @@ function ProdutoPage() {
               ))}
             </ul>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8">
               <WhatsAppButton
-                mensagem={`${msgProduto(produto.nome)} Tamanho: ${tamanho}.`}
+                mensagem={msgProduto(produto.nome)}
                 evento="Lead"
                 produto={produto.nome}
-                className="flex-1 py-3.5 text-base"
+                className="w-full py-3.5 text-base sm:w-auto sm:px-8"
               >
                 Comprar pelo WhatsApp
               </WhatsAppButton>
-              <WhatsAppButton
-                mensagem={`Olá! Gostaria de solicitar um orçamento para ${produto.nome} (${tamanho}).`}
-                evento="Lead"
-                produto={produto.nome}
-                icone={false}
-                className="flex-1 border border-navy/20 bg-transparent py-3.5 text-base text-navy shadow-none hover:bg-secondary hover:brightness-100"
-              >
-                Solicitar orçamento
-              </WhatsAppButton>
             </div>
-            <button
-              onClick={() => add(produto, tamanho)}
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold text-navy transition-colors hover:bg-secondary"
-            >
-              <ShoppingCart className="size-4" /> Adicionar ao carrinho
-            </button>
             <p className="mt-5 text-xs text-muted-foreground">{site.aviso}</p>
           </div>
         </div>
       </section>
+
+      {produto.sobre && produto.sobre.length > 0 && (
+        <section className="bg-secondary/50 py-14">
+          <div className="container-page max-w-4xl">
+            <h2 className="text-2xl font-bold text-navy sm:text-3xl">Sobre o produto</h2>
+            <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+              {produto.sobre.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {produto.fichaTecnica && produto.fichaTecnica.length > 0 && (
+        <section className="container-page max-w-4xl py-14">
+          <h2 className="text-2xl font-bold text-navy sm:text-3xl">Ficha técnica</h2>
+          <dl className="mt-6 overflow-hidden rounded-2xl border border-border">
+            {produto.fichaTecnica.map((f, i) => (
+              <div
+                key={f.label}
+                className={`grid gap-1 px-5 py-3.5 sm:grid-cols-[220px_minmax(0,1fr)] ${
+                  i % 2 === 0 ? "bg-card" : "bg-secondary/60"
+                }`}
+              >
+                <dt className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  {f.label}
+                </dt>
+                <dd className="text-sm text-navy">{f.valor}</dd>
+              </div>
+            ))}
+          </dl>
+          <WhatsAppButton
+            mensagem={msgProduto(produto.nome)}
+            evento="Lead"
+            produto={produto.nome}
+            className="mt-8 px-7 py-3.5 text-base"
+          >
+            Comprar pelo WhatsApp
+          </WhatsAppButton>
+        </section>
+      )}
 
       {relacionados.length > 0 && (
         <section className="container-page py-12">
