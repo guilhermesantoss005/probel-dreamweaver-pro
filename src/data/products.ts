@@ -4,6 +4,11 @@ import bauImg from "@/assets/cat-boxbau.jpg";
 import cabeceirasImg from "@/assets/cat-cabeceiras.jpg";
 import travesseirosImg from "@/assets/cat-travesseiros.jpg";
 import ambienteImg from "@/assets/banner-categoria.jpg";
+import creative1 from "@/assets/creative-163515.webp.asset.json";
+import creative2 from "@/assets/creative-163516.webp.asset.json";
+import creative3 from "@/assets/creative-163514.webp.asset.json";
+import creative4 from "@/assets/creative-163519.webp.asset.json";
+import creative5 from "@/assets/creative-163522.webp.asset.json";
 
 export type CategoriaSlug =
   | "colchoes"
@@ -84,10 +89,9 @@ export type Produto = {
   descricao: string;
   caracteristicas: string[];
   tamanhos: Tamanho[];
-  precoDe?: number;
-  preco: number;
-  parcelas?: string;
   imagens: string[];
+  sobre?: string[];
+  fichaTecnica?: { label: string; valor: string }[];
   oferta?: boolean;
   destaque?: boolean;
   visivel?: boolean;
@@ -108,9 +112,6 @@ export const produtos: Produto[] = [
       "Consulte altura e firmeza com a loja",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    precoDe: 3290,
-    preco: 2690,
-    parcelas: "ou 10x sem juros",
     imagens: [colchoesImg, ambienteImg],
     destaque: true,
     oferta: true,
@@ -128,9 +129,6 @@ export const produtos: Produto[] = [
       "Consulte firmeza na loja",
     ],
     tamanhos: ["Solteiro", "Solteirão", "Casal", "Queen"],
-    precoDe: 2190,
-    preco: 1790,
-    parcelas: "ou 10x sem juros",
     imagens: [colchoesImg, ambienteImg],
     destaque: true,
   },
@@ -143,9 +141,6 @@ export const produtos: Produto[] = [
       "Conjunto composto por colchão e base box. Consulte medidas, cores de revestimento e prazos com nossa equipe.",
     caracteristicas: ["Colchão + base box", "Pés inclusos", "Medidas sob consulta"],
     tamanhos: ["Casal", "Queen", "King"],
-    precoDe: 4590,
-    preco: 3790,
-    parcelas: "ou 12x sem juros",
     imagens: [conjuntosImg, ambienteImg],
     destaque: true,
     oferta: true,
@@ -159,9 +154,6 @@ export const produtos: Produto[] = [
       "Conjunto de linha superior. Consulte disponibilidade de medidas e condições comerciais diretamente com a loja.",
     caracteristicas: ["Colchão + base box", "Acabamento diferenciado", "Medidas sob consulta"],
     tamanhos: ["Queen", "King"],
-    precoDe: 6990,
-    preco: 5890,
-    parcelas: "ou 12x sem juros",
     imagens: [conjuntosImg, ambienteImg],
     destaque: true,
   },
@@ -174,9 +166,6 @@ export const produtos: Produto[] = [
       "Base box baú com abertura frontal ou lateral conforme a medida. Consulte a loja para verificar opções.",
     caracteristicas: ["Espaço interno para guardar itens", "Revestimento sob consulta", "Pés inclusos"],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    precoDe: 3490,
-    preco: 2890,
-    parcelas: "ou 10x sem juros",
     imagens: [bauImg, ambienteImg],
     destaque: true,
     oferta: true,
@@ -190,8 +179,6 @@ export const produtos: Produto[] = [
       "Cabeceira estofada para complementar o conjunto. Consulte cores e medidas disponíveis com a equipe.",
     caracteristicas: ["Estofada", "Cores sob consulta", "Fixação conforme o modelo"],
     tamanhos: ["Casal", "Queen", "King"],
-    preco: 1290,
-    parcelas: "ou 6x sem juros",
     imagens: [cabeceirasImg],
   },
   {
@@ -203,9 +190,6 @@ export const produtos: Produto[] = [
       "Travesseiro em espuma viscoelástica. Consulte altura e capa disponível diretamente com a loja.",
     caracteristicas: ["Espuma viscoelástica", "Capa removível conforme modelo", "Medida única"],
     tamanhos: ["Único"],
-    precoDe: 249,
-    preco: 179,
-    parcelas: "ou 3x sem juros",
     imagens: [travesseirosImg],
     destaque: true,
     oferta: true,
@@ -219,8 +203,6 @@ export const produtos: Produto[] = [
       "Travesseiro de uso diário. Consulte a loja para verificar disponibilidade.",
     caracteristicas: ["Enchimento macio", "Medida única", "Capa em tecido"],
     tamanhos: ["Único"],
-    preco: 119,
-    parcelas: "ou 3x sem juros",
     imagens: [travesseirosImg],
   },
 ];
@@ -244,9 +226,6 @@ export const buscarProdutos = (termo: string) => {
 
 export const getProduto = (slug: string) =>
   produtosVisiveis().find((p) => p.slug === slug);
-
-export const brl = (v: number) =>
-  v.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0 });
 
 export const nomeCategoria = (slug: CategoriaSlug) =>
   categorias.find((c) => c.slug === slug)?.nome ?? "";
