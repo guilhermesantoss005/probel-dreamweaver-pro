@@ -10,6 +10,7 @@ import {
   Star,
 } from "lucide-react";
 import heroImg from "@/assets/hero-bedroom.jpg";
+import heroCapa from "@/assets/hero-capa.png.asset.json";
 import lojaImg from "@/assets/loja.jpg";
 import { categorias, destaques, TAMANHOS } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
@@ -77,10 +78,10 @@ function Index() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={heroImg}
+          src={heroCapa.url}
           alt="Quarto sofisticado com cama e colchão premium"
-          width={1920}
-          height={1088}
+          width={1536}
+          height={1024}
           className="absolute inset-0 -z-10 size-full object-cover"
         />
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-navy-deep/95 via-navy-deep/75 to-navy-deep/20" />
