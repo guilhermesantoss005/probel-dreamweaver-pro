@@ -15,6 +15,8 @@ import athos2 from "@/assets/athos-177779.webp.asset.json";
 import athos3 from "@/assets/athos-177778.webp.asset.json";
 import athos4 from "@/assets/athos-177780.webp.asset.json";
 import proHotelVip from "@/assets/pro-hotel-vip-45.png.asset.json";
+import micheliniUltraGel from "@/assets/michelini-ultra-gel.png.asset.json";
+import lagunaGel from "@/assets/laguna-gel.png.asset.json";
 import robuste1 from "@/assets/robuste-169078.webp.asset.json";
 import robuste2 from "@/assets/robuste-169077.webp.asset.json";
 import robuste3 from "@/assets/robuste-169076.webp.asset.json";
@@ -109,6 +111,95 @@ export type Produto = {
 
 // Produtos de exemplo — edite, oculte (visivel: false) ou adicione livremente.
 export const produtos: Produto[] = [
+  {
+    slug: "conjunto-box-probel-michelini-ultra-gel",
+    nome: "Michelini Ultra Gel | Linha Ouro",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Conforto firme com HR Gel, Pillow Europeu e suporte de 200 kg por pessoa.",
+    descricao:
+      "Conjunto da Linha Ouro com molas ensacadas individualmente, espuma High Resilience Gel, Pillow Europeu, 36 cm de altura e suporte de até 200 kg por pessoa.",
+    caracteristicas: [
+      "Molas ensacadas individualmente com perímetro de segurança em espuma D33 Pró",
+      "Espuma High Resilience Gel (HR Gel) e aglomerado de alta densidade",
+      "Pillow Europeu — 36 cm de altura",
+      "Conforto 8/10 — firme, próximo ao Extra Firme",
+      "Suporte de até 200 kg por pessoa",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [micheliniUltraGel.url],
+    destaque: true,
+    sobre: [
+      "Perfis que priorizam firmeza e estabilidade encontram no Michelini Ultra Gel uma estrutura preparada para oferecer suporte consistente mesmo sob maiores exigências.",
+      "A integração entre camadas internas atua de forma contínua para manter o alinhamento do corpo ao longo da noite.",
+      "O resultado é um colchão que transmite solidez desde o primeiro contato, com sensação constante de controle e confiança no descanso diário, favorecendo noites estáveis e alinhadas a um padrão elevado de desempenho.",
+    ],
+    fichaTecnica: [
+      { label: "Modelo", valor: "Michelini Ultra Gel | Linha Ouro" },
+      { label: "Conforto", valor: "8/10" },
+      { label: "Classificação", valor: "Conforto firme, próximo ao Extra Firme" },
+      { label: "Matelassê", valor: "Malha 280 g Bege com detalhes Marrom (02)" },
+      { label: "Espuma do Matelassê", valor: "Espuma D20" },
+      {
+        label: "Espumas",
+        valor: "High Resilience Gel (HR Gel), aglomerado de espuma de alta densidade e Espuma D45 Pró",
+      },
+      { label: "Molejo", valor: "Molas ensacadas individualmente" },
+      { label: "Perímetro de Segurança", valor: "Espuma D33 Pró" },
+      { label: "Faixa Lateral", valor: "Suede Marfim (60)" },
+      { label: "Faixa do Pillow", valor: "Suede Marrom (AH)" },
+      { label: "Pillow", valor: "Pillow Europeu" },
+      { label: "Altura", valor: "36 cm" },
+      { label: "Suporte de peso", valor: "Até 200 kg por pessoa" },
+      { label: "Sistema de uso", valor: "Apenas girar" },
+      { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
+    ],
+  },
+  {
+    slug: "conjunto-box-probel-laguna-gel",
+    nome: "Laguna Gel | Linha Bronze",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Molas ensacadas, Espuma D24 Soft Gel e Pillow Euro com 26 cm de altura.",
+    descricao:
+      "Conjunto da Linha Bronze com molas ensacadas individualmente, camada em Espuma D24 Soft Gel, Pillow Euro, 26 cm de altura e suporte de até 120 kg por pessoa.",
+    caracteristicas: [
+      "Tecnologia Soft Gel para maior conforto térmico",
+      "Molas ensacadas individualmente (Pocket Springs)",
+      "Pillow Euro — 26 cm de altura",
+      "Estrutura reforçada com aglomerado de espuma de alta densidade",
+      "Acabamento em Jacquard Bege",
+      "Suporte de até 120 kg por pessoa",
+      "Certificação Inmetro nº 75/2021",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [lagunaGel.url],
+    destaque: true,
+    sobre: [
+      "Tecido em malha 280 g branca com detalhes em bege.",
+      "Camada de conforto em Espuma D24 Soft Gel, proporcionando maior sensação de maciez e conforto térmico.",
+      "Estrutura reforçada com aglomerado de espuma de alta densidade, aumentando a durabilidade.",
+      "Sistema de molas ensacadas individualmente, reduzindo a transferência de movimento entre os lados do colchão.",
+      "Pillow no padrão Euro, oferecendo acabamento sofisticado e maior conforto superficial.",
+      "Faixa lateral em Jacquard Bege, proporcionando resistência e um acabamento elegante.",
+      "Estrutura desenvolvida para suportar até 120 kg por pessoa.",
+    ],
+    fichaTecnica: [
+      { label: "Modelo", valor: "Laguna Gel | Linha Bronze" },
+      { label: "Conforto", valor: "6/10" },
+      { label: "Classificação", valor: "Conforto intermediário, com leve tendência ao firme" },
+      { label: "Matelassê", valor: "Malha 280 g Branca com detalhes Bege (FF)" },
+      { label: "Espuma do Matelassê", valor: "Espuma D24 Soft Gel" },
+      { label: "Espumas", valor: "Aglomerado de espuma de alta densidade" },
+      { label: "Molejo", valor: "Molas ensacadas individualmente (Pocket Springs)" },
+      { label: "Faixa Lateral", valor: "Jacquard Bege (EI)" },
+      { label: "Pillow", valor: "Pillow Euro" },
+      { label: "Altura", valor: "26 cm" },
+      { label: "Suporte de peso", valor: "Até 120 kg por pessoa" },
+      { label: "Sistema de uso", valor: "Apenas girar (não é necessário virar o colchão)" },
+      { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
+    ],
+  },
   {
     slug: "conjunto-box-probel-pro-hotel-vip-45",
     nome: "Pró Hotel VIP 45 | Linha Prata",
