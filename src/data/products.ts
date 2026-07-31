@@ -14,6 +14,11 @@ import athos1 from "@/assets/athos-177777.webp.asset.json";
 import athos2 from "@/assets/athos-177779.webp.asset.json";
 import athos3 from "@/assets/athos-177778.webp.asset.json";
 import athos4 from "@/assets/athos-177780.webp.asset.json";
+import proHotelVip from "@/assets/pro-hotel-vip-45.png.asset.json";
+import robuste1 from "@/assets/robuste-169078.webp.asset.json";
+import robuste2 from "@/assets/robuste-169077.webp.asset.json";
+import robuste3 from "@/assets/robuste-169076.webp.asset.json";
+import robuste4 from "@/assets/robuste-169079.webp.asset.json";
 
 export type CategoriaSlug =
   | "colchoes"
@@ -104,6 +109,75 @@ export type Produto = {
 
 // Produtos de exemplo — edite, oculte (visivel: false) ou adicione livremente.
 export const produtos: Produto[] = [
+  {
+    slug: "conjunto-box-probel-pro-hotel-vip-45",
+    nome: "Pró Hotel VIP 45 | Linha Prata",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Molas ensacadas, Pillow Euro Duplo e conforto intermediário. Dupla face.",
+    descricao:
+      "Conjunto da Linha Prata com molas ensacadas individualmente, Pillow Euro Duplo, conforto 7/10 (intermediário) e suporte de até 150 kg por pessoa. Sistema dupla face.",
+    caracteristicas: [
+      "Molas ensacadas individualmente (Pocket Springs)",
+      "Pillow Euro Duplo — 31 cm de altura",
+      "Conforto 7/10 — intermediário (equilíbrio entre macio e firme)",
+      "Suporte de até 150 kg por pessoa",
+      "Dupla face (pode ser utilizado dos dois lados)",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [proHotelVip.url],
+    destaque: true,
+    fichaTecnica: [
+      { label: "Modelo", valor: "Pró Hotel VIP 45 | Linha Prata" },
+      { label: "Conforto", valor: "7/10" },
+      { label: "Classificação", valor: "Intermediário (equilíbrio entre macio e firme)" },
+      { label: "Matelassê", valor: "Malha 280 g Branca (GS)" },
+      { label: "Espuma do Matelassê", valor: "Espuma D24 Soft Gel" },
+      { label: "Espumas", valor: "Espuma D45 Pró" },
+      { label: "Molejo", valor: "Molas ensacadas individualmente (Pocket Springs)" },
+      { label: "Faixa Lateral", valor: "Suede Cinza (FC)" },
+      { label: "Pillow", valor: "Pillow Euro Duplo" },
+      { label: "Altura", valor: "31 cm" },
+      { label: "Suporte de peso", valor: "Até 150 kg por pessoa" },
+      { label: "Sistema de uso", valor: "Dupla Face (pode ser utilizado dos dois lados)" },
+      { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
+    ],
+  },
+  {
+    slug: "conjunto-box-probel-guarda-costas-robuste",
+    nome: "Guarda Costas Robuste | Linha Prata",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Conforto firme com toque macio, Pillow Super e suporte de 200 kg por pessoa.",
+    descricao:
+      "Conjunto da Linha Prata com molas ensacadas individualmente, perímetro de segurança em espuma D33 Pró, Pillow Super, 34 cm de altura e suporte de até 200 kg por pessoa.",
+    caracteristicas: [
+      "Molas ensacadas individualmente",
+      "Perímetro de segurança em espuma D33 Pró",
+      "Pillow Super — 34 cm de altura",
+      "Conforto 8/10 — firme com toque macio",
+      "Suporte de até 200 kg por pessoa",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [robuste1.url, robuste2.url, robuste3.url, robuste4.url],
+    destaque: true,
+    fichaTecnica: [
+      { label: "Modelo", valor: "Guarda Costas Robuste | Linha Prata" },
+      { label: "Conforto", valor: "8/10" },
+      { label: "Classificação", valor: "Conforto firme com toque macio (mais próximo do Extra Firme)" },
+      { label: "Matelassê", valor: "Malha 320 g Branca (EV)" },
+      { label: "Espuma do Matelassê", valor: "Espuma D20" },
+      { label: "Espumas", valor: "Espuma D45 e aglomerado de espuma de alta densidade" },
+      { label: "Molejo", valor: "Molas ensacadas individualmente" },
+      { label: "Perímetro de Segurança", valor: "Espuma D33 Pró" },
+      { label: "Faixa Lateral", valor: "Suede Marfim (60)" },
+      { label: "Pillow", valor: "Pillow Super" },
+      { label: "Altura", valor: "34 cm" },
+      { label: "Suporte de peso", valor: "Até 200 kg por pessoa" },
+      { label: "Sistema de uso", valor: "Apenas girar (não é necessário virar o colchão)" },
+      { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
+    ],
+  },
   {
     slug: "conjunto-box-queen-probel-guarda-costas-star",
     nome: "Guarda Costas Star",
