@@ -9,6 +9,11 @@ import creative2 from "@/assets/creative-163516.webp.asset.json";
 import creative3 from "@/assets/creative-163514.webp.asset.json";
 import creative4 from "@/assets/creative-163519.webp.asset.json";
 import creative5 from "@/assets/creative-163522.webp.asset.json";
+import guardaCostasStar from "@/assets/guarda-costas-star.png.asset.json";
+import athos1 from "@/assets/athos-177777.webp.asset.json";
+import athos2 from "@/assets/athos-177779.webp.asset.json";
+import athos3 from "@/assets/athos-177778.webp.asset.json";
+import athos4 from "@/assets/athos-177780.webp.asset.json";
 
 export type CategoriaSlug =
   | "colchoes"
@@ -99,6 +104,87 @@ export type Produto = {
 
 // Produtos de exemplo — edite, oculte (visivel: false) ou adicione livremente.
 export const produtos: Produto[] = [
+  {
+    slug: "conjunto-box-queen-probel-guarda-costas-star",
+    nome: "Guarda Costas Star",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Molas ensacadas, Pillow Super e conforto intermediário para macio.",
+    descricao:
+      "Conjunto box com molas ensacadas individualmente, Pillow Super e nível de conforto 7/10 — intermediário para macio, mais confortável do que firme.",
+    caracteristicas: [
+      "Molas ensacadas individualmente (Pocket Springs)",
+      "Pillow Super com 30 cm de altura",
+      "Conforto 7/10 — intermediário para macio",
+      "Suporte de até 120 kg por pessoa",
+    ],
+    tamanhos: ["Casal", "Queen", "King"],
+    imagens: [guardaCostasStar.url],
+    destaque: true,
+    fichaTecnica: [
+      { label: "Modelo", valor: "Guarda Costas Star" },
+      { label: "Conforto", valor: "7/10" },
+      { label: "Classificação", valor: "Intermediário para macio (mais confortável do que firme)" },
+      { label: "Tecido", valor: "Malha 280 g Branca" },
+      { label: "Espuma do Tampo", valor: "D20" },
+      { label: "Espuma Interna", valor: "Espuma D33 Pró" },
+      { label: "Sistema de Molas", valor: "Molas ensacadas individualmente (Pocket Springs)" },
+      { label: "Faixa Lateral", valor: "Suede Bege (GJ)" },
+      { label: "Pillow", valor: "Pillow Super" },
+      { label: "Altura", valor: "30 cm" },
+      { label: "Suporte de peso", valor: "Até 120 kg por pessoa" },
+      { label: "Uso", valor: "Apenas girar (não necessita virar o colchão)" },
+    ],
+  },
+  {
+    slug: "conjunto-box-queen-probel-athos-bambu-new",
+    nome: "Conjunto Box Queen Mola Ensacada Probel Athos Bambu New",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Queen com molas ensacadas, Pillow Super e suporte de 140 kg por pessoa.",
+    descricao:
+      "Conjunto box Queen Probel Athos Bambu New com molas ensacadas, Pillow Super, tecido malha branca 350 g/m² e altura total de 70 cm. Código no site: PAA2161.",
+    caracteristicas: [
+      "Molas ensacadas individualmente",
+      "Pillow Super",
+      "Suporte de até 140 kg por pessoa",
+      "Manutenção No Turn (apenas girar)",
+    ],
+    tamanhos: ["Queen"],
+    imagens: [athos1.url, athos2.url, athos3.url, athos4.url],
+    destaque: true,
+    sobre: [
+      "O Conjunto Box Queen Probel Athos Bambu New reúne o sistema de molas ensacadas individualmente com Pillow Super, entregando conforto e estabilidade para o casal — quando um se movimenta, o outro não sente.",
+      "O estofamento combina Espuma D33, Espuma D20 e espuma de alta densidade ≥ D65, com matelassê em espuma D20 cilíndrica e revestimento em malha branca com detalhes e relevo de 350 g/m².",
+      "Com suporte de até 140 kg por pessoa, é indicado também para casais com biotipos diferentes. Manutenção No Turn: basta girar o colchão, sem necessidade de virar.",
+      "Certificado conforme Portaria Inmetro Nº 75/2021. Código no site: PAA2161.",
+    ],
+    fichaTecnica: [
+      { label: "Modelo", valor: "Athos Bambu New" },
+      { label: "Código no site", valor: "PAA2161" },
+      { label: "Sistema de Molejo", valor: "Mola Ensacada" },
+      { label: "Suporte de peso", valor: "140 kg por pessoa" },
+      { label: "Tamanho", valor: "Queen" },
+      { label: "Largura", valor: "158 cm" },
+      { label: "Comprimento", valor: "198 cm" },
+      { label: "Indicação Biotipos Casais", valor: "Indicado também para casais com biotipos diferentes" },
+      { label: "Espuma do Estofamento 1", valor: "Espuma D33" },
+      { label: "Espuma do Estofamento 2", valor: "Espuma D20" },
+      { label: "Espuma do Estofamento 3", valor: "Espuma de Alta Densidade ≥ D65" },
+      { label: "Pillow", valor: "Super" },
+      { label: "Tecido Tampo", valor: "Malha Branca com detalhes e relevo" },
+      { label: "Gramatura Tecido", valor: "350 g/m²" },
+      { label: "Espuma Matelassê", valor: "D20 Cilíndrica" },
+      { label: "Base de Suporte do Colchão", valor: "Espuma" },
+      { label: "Manutenção", valor: "No Turn" },
+      { label: "Garantia", valor: "12 Meses Estrutura, 3 Meses Tecido" },
+      { label: "Certificação Inmetro", valor: "Certificado conforme Portaria Inmetro Nº 75/2021" },
+      { label: "Altura do Colchão", valor: "32 cm" },
+      { label: "Altura da Base Box", valor: "26 cm" },
+      { label: "Altura dos pezinhos", valor: "12 cm" },
+      { label: "Altura do Conjunto", valor: "70 cm" },
+    ],
+  },
   {
     slug: "conjunto-box-queen-probel-creative-soft-gel",
     nome: "Conjunto Box Queen Mola Probel Creative Soft Gel",
