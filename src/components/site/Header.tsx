@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { MSG_GERAL, site } from "@/config/site";
 import { track } from "@/lib/analytics";
+import logoAsset from "@/assets/probel-logo.png.asset.json";
 
 export const navLinks = [
   { to: "/", label: "Início" },
@@ -20,19 +21,14 @@ export const navLinks = [
 
 function Logo() {
   return (
-    <Link to="/" className="flex shrink-0 items-center gap-2.5">
-      {/* Espaço reservado para a logo oficial da loja */}
-      <span className="grid size-9 place-items-center rounded-lg bg-navy text-sm font-bold text-primary-foreground">
-        PB
-      </span>
-      <span className="min-w-0 leading-tight">
-        <span className="block truncate font-display text-base font-bold text-navy">
-          {site.nome}
-        </span>
-        <span className="block truncate text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-          {site.slogan}
-        </span>
-      </span>
+    <Link to="/" className="flex shrink-0 items-center" aria-label={site.nome}>
+      <img
+        src={logoAsset.url}
+        alt={`Logomarca ${site.nome}`}
+        width={825}
+        height={299}
+        className="h-10 w-auto sm:h-12"
+      />
     </Link>
   );
 }
