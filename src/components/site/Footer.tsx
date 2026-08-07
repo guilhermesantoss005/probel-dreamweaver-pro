@@ -20,11 +20,15 @@ export function Footer() {
     <footer className="mt-20 bg-navy-deep text-primary-foreground">
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-lg bg-primary-foreground/10 text-sm font-bold">
-              PB
-            </span>
-            <span className="font-display text-base font-bold">{site.nome}</span>
+          <div className="inline-flex items-center rounded-xl bg-primary-foreground px-4 py-3">
+            <img
+              src={logoAsset.url}
+              alt={`Logomarca ${site.nome}`}
+              width={825}
+              height={299}
+              loading="lazy"
+              className="h-10 w-auto"
+            />
           </div>
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
             {site.slogan}. {site.unidade}.
