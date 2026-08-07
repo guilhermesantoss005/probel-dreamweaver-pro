@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MSG_GERAL, site, whatsappUrl } from "@/config/site";
+import logoAsset from "@/assets/probel-logo.png.asset.json";
 
 const institucional = [
   { to: "/sobre", label: "Sobre nós" },
