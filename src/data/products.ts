@@ -17,6 +17,10 @@ import athos4 from "@/assets/athos-177780.webp.asset.json";
 import proHotelVip from "@/assets/pro-hotel-vip-45.png.asset.json";
 import micheliniUltraGel from "@/assets/michelini-ultra-gel.png.asset.json";
 import lagunaGel from "@/assets/laguna-gel.png.asset.json";
+import lagunaGel2 from "@/assets/laguna-gel-2.png.asset.json";
+import lagunaGel3 from "@/assets/laguna-gel-3.png.asset.json";
+import maximusPlus1 from "@/assets/maximus-plus-1.png.asset.json";
+import maximusPlus2 from "@/assets/maximus-plus-2.png.asset.json";
 import robuste1 from "@/assets/robuste-169078.webp.asset.json";
 import robuste2 from "@/assets/robuste-169077.webp.asset.json";
 import robuste3 from "@/assets/robuste-169076.webp.asset.json";
@@ -173,7 +177,7 @@ export const produtos: Produto[] = [
       "Certificação Inmetro nº 75/2021",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [lagunaGel.url],
+    imagens: [lagunaGel.url, lagunaGel2.url, lagunaGel3.url],
     destaque: true,
     sobre: [
       "Tecido em malha 280 g branca com detalhes em bege.",
@@ -231,6 +235,41 @@ export const produtos: Produto[] = [
       { label: "Altura", valor: "31 cm" },
       { label: "Suporte de peso", valor: "Até 150 kg por pessoa" },
       { label: "Sistema de uso", valor: "Dupla Face (pode ser utilizado dos dois lados)" },
+      { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
+    ],
+  },
+  {
+    slug: "conjunto-box-probel-maximus-plus",
+    nome: "Maximus Plus | Linha Bronze",
+    categoria: "conjuntos-box",
+    descricaoCurta:
+      "Molas ensacadas com base em EPS, Euro Pillow e conforto intermediário.",
+    descricao:
+      "Conjunto da Linha Bronze com molas ensacadas individualmente, base em EPS, Euro Pillow, Espuma D28, 26 cm de altura e suporte de até 110 kg por pessoa.",
+    caracteristicas: [
+      "Molas ensacadas individualmente",
+      "Euro Pillow",
+      "Espuma D28",
+      "Base em EPS",
+      "Apenas girar (não necessita virar)",
+      "Certificado pelo Inmetro",
+      "Suporte de até 110 kg por pessoa",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [maximusPlus1.url, maximusPlus2.url],
+    destaque: true,
+    fichaTecnica: [
+      { label: "Modelo", valor: "Maximus Plus" },
+      { label: "Linha", valor: "Bronze" },
+      { label: "Nível de conforto", valor: "Intermediário (aprox. 5/10)" },
+      { label: "Matelassê", valor: "Malha 180 g Cinza (FG) com espuma D20" },
+      { label: "Espumas", valor: "Espuma D28" },
+      { label: "Molejo", valor: "Molas ensacadas individualmente + Base em EPS" },
+      { label: "Faixa Lateral", valor: "Jacquard Branco (FJ)" },
+      { label: "Pillow", valor: "Euro Pillow" },
+      { label: "Altura", valor: "26 cm" },
+      { label: "Suporte de peso", valor: "Até 110 kg por pessoa" },
+      { label: "Sistema de uso", valor: "Apenas girar" },
       { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
     ],
   },
