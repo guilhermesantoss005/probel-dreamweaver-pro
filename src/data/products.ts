@@ -75,7 +75,7 @@ export const categorias: Categoria[] = [
     slug: "box-bau",
     nome: "Box Baú",
     descricao: "Espaço extra de armazenamento sem abrir mão do conforto.",
-    imagem: bauImg,
+    imagem: boxBau.url,
     rota: "/box-bau",
   },
   {
