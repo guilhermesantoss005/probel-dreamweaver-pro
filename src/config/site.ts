@@ -19,14 +19,20 @@ export const site = {
     "Imagens meramente ilustrativas. Consulte disponibilidade e condições diretamente com nossa equipe.",
 } as const;
 
-// Link único de WhatsApp usado em todos os botões do site.
-export const WHATSAPP_LINK =
-  "https://api.whatsapp.com/send/?phone=5548999818302&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&type=phone_number&app_absent=0";
-
-export const whatsappUrl = (_mensagem?: string) => WHATSAPP_LINK;
-
 export const MSG_GERAL =
   "Olá, tudo bem? Vim do site e gostaria de mais informações.";
 
-export const msgProduto = (nome: string) =>
-  `Olá, tudo bem? Vim do site e gostaria de mais informações sobre ${nome}.`;
+export const WHATSAPP_PHONE = "5548999818302";
+
+// Link único de WhatsApp usado em todos os botões do site (com a mensagem do contexto).
+export const whatsappUrl = (mensagem: string = MSG_GERAL) =>
+  `https://api.whatsapp.com/send/?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(
+    mensagem || MSG_GERAL,
+  )}&type=phone_number&app_absent=0`;
+
+export const WHATSAPP_LINK = whatsappUrl(MSG_GERAL);
+
+export const msgProduto = (nome: string, tamanho?: string) =>
+  tamanho
+    ? `Olá, tudo bem? Vim do site e gostaria de mais informações sobre ${nome} — tamanho ${tamanho}.`
+    : `Olá, tudo bem? Vim do site e gostaria de mais informações sobre ${nome}.`;

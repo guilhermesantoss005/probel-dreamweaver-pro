@@ -25,6 +25,7 @@ import robuste1 from "@/assets/robuste-169078.webp.asset.json";
 import robuste2 from "@/assets/robuste-169077.webp.asset.json";
 import robuste3 from "@/assets/robuste-169076.webp.asset.json";
 import robuste4 from "@/assets/robuste-169079.webp.asset.json";
+import boxBau from "@/assets/box-bau.png.asset.json";
 
 export type CategoriaSlug =
   | "colchoes"
@@ -35,8 +36,6 @@ export type CategoriaSlug =
 
 export type Tamanho =
   | "Solteiro"
-  | "Solteirão"
-  | "Viúva"
   | "Casal"
   | "Queen"
   | "King"
@@ -44,8 +43,6 @@ export type Tamanho =
 
 export const TAMANHOS: Tamanho[] = [
   "Solteiro",
-  "Solteirão",
-  "Viúva",
   "Casal",
   "Queen",
   "King",
@@ -78,7 +75,7 @@ export const categorias: Categoria[] = [
     slug: "box-bau",
     nome: "Box Baú",
     descricao: "Espaço extra de armazenamento sem abrir mão do conforto.",
-    imagem: bauImg,
+    imagem: boxBau.url,
     rota: "/box-bau",
   },
   {
@@ -177,7 +174,7 @@ export const produtos: Produto[] = [
       "Certificação Inmetro nº 75/2021",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [lagunaGel.url, lagunaGel2.url, lagunaGel3.url],
+    imagens: [lagunaGel2.url, lagunaGel.url, lagunaGel3.url],
     destaque: true,
     sobre: [
       "Tecido em malha 280 g branca com detalhes em bege.",
@@ -256,7 +253,7 @@ export const produtos: Produto[] = [
       "Suporte de até 110 kg por pessoa",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [maximusPlus1.url, maximusPlus2.url],
+    imagens: [maximusPlus2.url, maximusPlus1.url],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Maximus Plus" },
@@ -355,7 +352,7 @@ export const produtos: Produto[] = [
       "Manutenção No Turn (apenas girar)",
     ],
     tamanhos: ["Queen"],
-    imagens: [athos1.url, athos2.url, athos3.url, athos4.url],
+    imagens: [athos2.url, athos3.url, athos1.url, athos4.url],
     destaque: true,
     sobre: [
       "O Conjunto Box Queen Probel Athos Bambu New reúne o sistema de molas ensacadas individualmente com Pillow Super, entregando conforto e estabilidade para o casal — quando um se movimenta, o outro não sente.",
@@ -404,7 +401,7 @@ export const produtos: Produto[] = [
       "Suporte de até 120 kg por pessoa",
     ],
     tamanhos: ["Queen"],
-    imagens: [creative1.url, creative2.url, creative3.url, creative4.url, creative5.url],
+    imagens: [creative2.url, creative1.url, creative3.url, creative4.url, creative5.url],
     destaque: true,
     sobre: [
       "O colchão Creative Pillow Super se destaca pela combinação do conforto máximo e da estabilidade individual proporcionada pelo sistema antirruído do molejo mais querido do mundo, aquele das molas ensacadas individualmente e que quando um se movimenta o outro não sente.",
@@ -449,7 +446,7 @@ export const produtos: Produto[] = [
       "Base box baú com abertura frontal ou lateral conforme a medida. Consulte a loja para verificar opções.",
     caracteristicas: ["Espaço interno para guardar itens", "Revestimento sob consulta", "Pés inclusos"],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [bauImg, ambienteImg],
+    imagens: [boxBau.url, bauImg, ambienteImg],
     destaque: true,
     oferta: true,
   },
@@ -477,7 +474,19 @@ export const produtos: Produto[] = [
   },
 ];
 
-export const produtosVisiveis = () => produtos.filter((p) => p.visivel !== false);
+// Ordem das linhas Probel: Ouro, Prata, Bronze e depois os demais.
+const LINHA_ORDEM = ["ouro", "prata", "bronze"];
+
+const rankLinha = (nome: string) => {
+  const n = nome.toLowerCase();
+  const i = LINHA_ORDEM.findIndex((l) => n.includes(`linha ${l}`));
+  return i === -1 ? LINHA_ORDEM.length : i;
+};
+
+const porLinha = (lista: Produto[]) =>
+  [...lista].sort((a, b) => rankLinha(a.nome) - rankLinha(b.nome));
+
+export const produtosVisiveis = () => porLinha(produtos.filter((p) => p.visivel !== false));
 
 export const porCategoria = (slug: CategoriaSlug) =>
   produtosVisiveis().filter((p) => p.categoria === slug);
