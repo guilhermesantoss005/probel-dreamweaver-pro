@@ -128,7 +128,7 @@ function ProdutoPage() {
 
             <div className="mt-8">
               <WhatsAppButton
-                mensagem={msgProduto(produto.nome)}
+                mensagem={msgProduto(produto.nome, tamanho)}
                 evento="Lead"
                 produto={produto.nome}
                 className="w-full py-3.5 text-base sm:w-auto sm:px-8"
@@ -173,7 +173,7 @@ function ProdutoPage() {
             ))}
           </dl>
           <WhatsAppButton
-            mensagem={msgProduto(produto.nome)}
+            mensagem={msgProduto(produto.nome, tamanho)}
             evento="Lead"
             produto={produto.nome}
             className="mt-8 px-7 py-3.5 text-base"
