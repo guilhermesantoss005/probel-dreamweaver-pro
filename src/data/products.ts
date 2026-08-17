@@ -324,12 +324,12 @@ export const produtos: Produto[] = [
   },
   {
     slug: "conjunto-box-queen-probel-guarda-costas-star",
-    nome: "Guarda Costas Star",
+    nome: "Guarda Costas Star | Linha Prata",
     categoria: "conjuntos-box",
     descricaoCurta:
       "Molas ensacadas, Pillow Super e conforto intermediário para macio.",
     descricao:
-      "Conjunto box com molas ensacadas individualmente, Pillow Super e nível de conforto 7/10 — intermediário para macio, mais confortável do que firme.",
+      "Conjunto box da Linha Prata com molas ensacadas individualmente, Pillow Super e nível de conforto 7/10 — intermediário para macio, mais confortável do que firme.",
     caracteristicas: [
       "Molas ensacadas individualmente (Pocket Springs)",
       "Pillow Super com 30 cm de altura",
@@ -340,7 +340,7 @@ export const produtos: Produto[] = [
     imagens: [guardaCostasStar.url],
     destaque: true,
     fichaTecnica: [
-      { label: "Modelo", valor: "Guarda Costas Star" },
+      { label: "Modelo", valor: "Guarda Costas Star | Linha Prata" },
       { label: "Conforto", valor: "7/10" },
       { label: "Classificação", valor: "Intermediário para macio (mais confortável do que firme)" },
       { label: "Tecido", valor: "Malha 280 g Branca" },
