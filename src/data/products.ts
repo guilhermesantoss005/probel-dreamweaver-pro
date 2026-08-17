@@ -26,7 +26,7 @@ import robuste2 from "@/assets/robuste-169077.webp.asset.json";
 import robuste3 from "@/assets/robuste-169076.webp.asset.json";
 import robuste4 from "@/assets/robuste-169079.webp.asset.json";
 import boxBau from "@/assets/box-bau.png.asset.json";
-import portinari from "@/assets/portinari-articulavel.png.asset.json";
+import portinari from "@/assets/portinari-articulavel-nova.png.asset.json";
 import trpoesy from "@/assets/travesseiro-poesy.jpg.asset.json";
 import trfuture from "@/assets/travesseiro-future.jpg.asset.json";
 import trboost from "@/assets/travesseiro-boost.jpg.asset.json";
