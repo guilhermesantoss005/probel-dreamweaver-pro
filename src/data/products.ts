@@ -26,6 +26,23 @@ import robuste2 from "@/assets/robuste-169077.webp.asset.json";
 import robuste3 from "@/assets/robuste-169076.webp.asset.json";
 import robuste4 from "@/assets/robuste-169079.webp.asset.json";
 import boxBau from "@/assets/box-bau.png.asset.json";
+import portinari from "@/assets/portinari-articulavel.png.asset.json";
+import trpoesy from "@/assets/travesseiro-poesy.jpg.asset.json";
+import trfuture from "@/assets/travesseiro-future.jpg.asset.json";
+import trboost from "@/assets/travesseiro-boost.jpg.asset.json";
+import trmax from "@/assets/travesseiro-max.jpg.asset.json";
+import tronly_latex from "@/assets/travesseiro-only-latex.jpg.asset.json";
+import trtesouros from "@/assets/travesseiro-tesouros.jpg.asset.json";
+import trbemdizer from "@/assets/travesseiro-bemdizer.jpg.asset.json";
+import trsensitive from "@/assets/travesseiro-sensitive.jpg.asset.json";
+import trcalma from "@/assets/travesseiro-calma.jpg.asset.json";
+import trdivino from "@/assets/travesseiro-divino.jpg.asset.json";
+import tratlantis from "@/assets/travesseiro-atlantis.jpg.asset.json";
+import trguarda_costas from "@/assets/travesseiro-guarda-costas.jpg.asset.json";
+import trisis from "@/assets/travesseiro-isis.jpg.asset.json";
+import trrelax from "@/assets/travesseiro-relax.jpg.asset.json";
+import tradapt_alveolado from "@/assets/travesseiro-adapt-alveolado.jpg.asset.json";
+import tradapt_d18 from "@/assets/travesseiro-adapt-d18.jpg.asset.json";
 
 export type CategoriaSlug =
   | "colchoes"
@@ -462,15 +479,356 @@ export const produtos: Produto[] = [
     imagens: [cabeceirasImg],
   },
   {
-    slug: "travesseiro-probel-conforto",
-    nome: "Travesseiro Probel Conforto",
-    categoria: "travesseiros",
-    descricaoCurta: "Opção macia para o uso diário.",
+    slug: "portinari-cama-articulavel",
+    nome: "Portinari | Cama Articulável",
+    categoria: "conjuntos-box",
+    descricaoCurta: "Cama articulável com colchão Probel e box baú.",
     descricao:
-      "Travesseiro de uso diário. Consulte a loja para verificar disponibilidade.",
-    caracteristicas: ["Enchimento macio", "Medida única", "Capa em tecido"],
+      "Cama articulável Portinari com colchão em malha 350g branca com detalhes em relevo, espumas visco elástico gel e D28 Pró. Box com opção em corino ou suede e espaço interno. Consulte cores e disponibilidade com a equipe.",
+    caracteristicas: [
+      "Nível de conforto: plush (4/10)",
+      "Matelassê: malha 350g branca com detalhes em relevo",
+      "Espumas: visco elástico gel + espuma D28 Pró",
+      "Altura: 51cm",
+      "Suporte: 120kg",
+      "Sem pillow — apenas girar",
+      "Opcional de composição: látex + espuma D28 Pró",
+      "Box opcional em corino ou suede (cores sob consulta)",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [portinari.url],
+    destaque: true,
+    sobre: [
+      "A Portinari é a cama articulável da Probel: o movimento do estrado permite elevar cabeceira e pernas para leitura, TV, descanso e melhor circulação.",
+      "O colchão traz matelassê em malha 350g branca com detalhes em relevo e composição em visco elástico gel com espuma D28 Pró, entregando conforto plush com suporte firme onde o corpo precisa.",
+      "O box conta com espaço interno para armazenamento e pode ser revestido em corino ou suede, com cores verificadas junto ao vendedor.",
+    ],
+    fichaTecnica: [
+      { label: "Nível de conforto", valor: "Plush (4/10)" },
+      { label: "Matelassê", valor: "Malha 350g branca com detalhes em relevo" },
+      { label: "Espumas", valor: "Visco elástico gel e espuma D28 Pró" },
+      { label: "Faixa lateral", valor: "Malha branca com detalhes em relevo" },
+      { label: "Pillow", valor: "Sem pillow" },
+      { label: "Altura", valor: "51cm" },
+      { label: "Suporte", valor: "120kg" },
+      { label: "Uso", valor: "Apenas girar" },
+      { label: "Box", valor: "Opcional em corino ou suede" },
+      { label: "Certificação", valor: "Portaria Inmetro nº 35/2021" },
+    ],
+  },
+  {
+    slug: "travesseiro-poesy",
+    nome: "Travesseiro Poesy | Fibra",
+    categoria: "travesseiros",
+    descricaoCurta: "Fibra — Travesseiro em fibra com peso de 850g.",
+    descricao:
+      "Travesseiro em fibra com peso de 850g. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Fibra",
+      "Peso: 850g",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
     tamanhos: ["Único"],
-    imagens: [travesseirosImg],
+    imagens: [trpoesy.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Fibra" },
+      { label: "Peso", valor: "850g" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-future",
+    nome: "Travesseiro Future | Fibra",
+    categoria: "travesseiros",
+    descricaoCurta: "Fibra — Travesseiro corpo inteiro em fibra, ideal para apoio lateral.",
+    descricao:
+      "Travesseiro corpo inteiro em fibra, ideal para apoio lateral. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Fibra",
+      "Tamanho para fronhas: 40cm x 130cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trfuture.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Fibra" },
+      { label: "Tamanho para fronhas", valor: "40cm x 130cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-boost",
+    nome: "Travesseiro Boost | Espuma D15",
+    categoria: "travesseiros",
+    descricaoCurta: "Espuma D15 — Travesseiro em espuma D15 com opções de altura.",
+    descricao:
+      "Travesseiro em espuma D15 com opções de altura. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Espuma D15",
+      "Altura: 12cm ou 14cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trboost.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Espuma D15" },
+      { label: "Altura", valor: "12cm ou 14cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-max",
+    nome: "Travesseiro Max | Fibra",
+    categoria: "travesseiros",
+    descricaoCurta: "Fibra — Travesseiro em fibra com 650g de enchimento.",
+    descricao:
+      "Travesseiro em fibra com 650g de enchimento. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Fibra",
+      "Peso: 650g",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trmax.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Fibra" },
+      { label: "Peso", valor: "650g" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-only-latex",
+    nome: "Travesseiro Only Látex",
+    categoria: "travesseiros",
+    descricaoCurta: "Látex — Travesseiro 100% látex com 12cm de altura.",
+    descricao:
+      "Travesseiro 100% látex com 12cm de altura. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Látex",
+      "Altura: 12cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [tronly_latex.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Látex" },
+      { label: "Altura", valor: "12cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-tesouros",
+    nome: "Travesseiro Tesouros | High Resilience",
+    categoria: "travesseiros",
+    descricaoCurta: "High Resilience — Travesseiro em espuma high resilience com boa recuperação.",
+    descricao:
+      "Travesseiro em espuma high resilience com boa recuperação. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: High Resilience",
+      "Altura: 12cm ou 14cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trtesouros.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "High Resilience" },
+      { label: "Altura", valor: "12cm ou 14cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-bemdizer",
+    nome: "Travesseiro Bemdizer | Visco D40",
+    categoria: "travesseiros",
+    descricaoCurta: "Visco D40 — Travesseiro em viscoelástico D40 de alta densidade.",
+    descricao:
+      "Travesseiro em viscoelástico D40 de alta densidade. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Visco D40",
+      "Altura: 12cm ou 14cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trbemdizer.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Visco D40" },
+      { label: "Altura", valor: "12cm ou 14cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-sensitive",
+    nome: "Travesseiro Sensitive | Visco D40",
+    categoria: "travesseiros",
+    descricaoCurta: "Visco D40 — Travesseiro viscoelástico D40 em medida ampla.",
+    descricao:
+      "Travesseiro viscoelástico D40 em medida ampla. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Visco D40",
+      "Altura: 14cm",
+      "Tamanho para fronhas: 50cm x 70cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trsensitive.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Visco D40" },
+      { label: "Altura", valor: "14cm" },
+      { label: "Tamanho para fronhas", valor: "50cm x 70cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-calma",
+    nome: "Travesseiro Calma | Visco D30",
+    categoria: "travesseiros",
+    descricaoCurta: "Visco D30 — Travesseiro viscoelástico D30 com opções de altura.",
+    descricao:
+      "Travesseiro viscoelástico D30 com opções de altura. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Visco D30",
+      "Altura: 12cm ou 14cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trcalma.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Visco D30" },
+      { label: "Altura", valor: "12cm ou 14cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-divino",
+    nome: "Travesseiro Divino | D24 Hiper Soft",
+    categoria: "travesseiros",
+    descricaoCurta: "D24 Hiper Soft — Travesseiro em espuma D24 hiper soft, toque macio.",
+    descricao:
+      "Travesseiro em espuma D24 hiper soft, toque macio. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: D24 Hiper Soft",
+      "Altura: 12cm ou 14cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trdivino.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "D24 Hiper Soft" },
+      { label: "Altura", valor: "12cm ou 14cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-atlantis",
+    nome: "Travesseiro Atlantis | D24 Hiper Soft",
+    categoria: "travesseiros",
+    descricaoCurta: "D24 Hiper Soft — Travesseiro D24 hiper soft em medida ampla.",
+    descricao:
+      "Travesseiro D24 hiper soft em medida ampla. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: D24 Hiper Soft",
+      "Altura: 14cm",
+      "Tamanho para fronhas: 50cm x 70cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [tratlantis.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "D24 Hiper Soft" },
+      { label: "Altura", valor: "14cm" },
+      { label: "Tamanho para fronhas", valor: "50cm x 70cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-guarda-costas",
+    nome: "Travesseiro Guarda Costas | D24 Soft",
+    categoria: "travesseiros",
+    descricaoCurta: "D24 Soft — Travesseiro em espuma D24 soft com opções de altura.",
+    descricao:
+      "Travesseiro em espuma D24 soft com opções de altura. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: D24 Soft",
+      "Altura: 12cm ou 14cm",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trguarda_costas.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "D24 Soft" },
+      { label: "Altura", valor: "12cm ou 14cm" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-isis",
+    nome: "Travesseiro Isis | Fibra",
+    categoria: "travesseiros",
+    descricaoCurta: "Fibra — Travesseiro em fibra com 14cm de altura.",
+    descricao:
+      "Travesseiro em fibra com 14cm de altura. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Fibra",
+      "Altura: 14cm",
+      "Tamanho para fronhas: 50cm x 70cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trisis.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Fibra" },
+      { label: "Altura", valor: "14cm" },
+      { label: "Tamanho para fronhas", valor: "50cm x 70cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-relax",
+    nome: "Travesseiro Relax | Flocos de Espuma",
+    categoria: "travesseiros",
+    descricaoCurta: "Flocos de Espuma — Travesseiro em flocos de espuma com 800g.",
+    descricao:
+      "Travesseiro em flocos de espuma com 800g. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: Flocos de espuma",
+      "Peso: 800g",
+      "Tamanho para fronhas: 40cm x 60cm",
+    ],
+    tamanhos: ["Único"],
+    imagens: [trrelax.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "Flocos de espuma" },
+      { label: "Peso", valor: "800g" },
+      { label: "Tamanho para fronhas", valor: "40cm x 60cm" },
+    ],
+  },
+  {
+    slug: "travesseiro-adapt-alveolado",
+    nome: "Travesseiro Adapt D18 Alveolado",
+    categoria: "travesseiros",
+    descricaoCurta: "D18 Alveolado — Travesseiro rampa em espuma D18 alveolada.",
+    descricao:
+      "Travesseiro rampa em espuma D18 alveolada. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: D18 alveolado",
+      "Medida: 40 x 60 x 72",
+    ],
+    tamanhos: ["Único"],
+    imagens: [tradapt_alveolado.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "D18 alveolado" },
+      { label: "Medida", valor: "40 x 60 x 72" },
+    ],
+  },
+  {
+    slug: "travesseiro-adapt-d18",
+    nome: "Travesseiro Adapt D18",
+    categoria: "travesseiros",
+    descricaoCurta: "D18 — Travesseiro rampa em espuma D18.",
+    descricao:
+      "Travesseiro rampa em espuma D18. Consulte a loja para verificar disponibilidade de alturas e medidas.",
+    caracteristicas: [
+      "Enchimento: D18",
+      "Medida: 40 x 60 x 72",
+    ],
+    tamanhos: ["Único"],
+    imagens: [tradapt_d18.url],
+    fichaTecnica: [
+      { label: "Enchimento", valor: "D18" },
+      { label: "Medida", valor: "40 x 60 x 72" },
+    ],
   },
 ];
 
