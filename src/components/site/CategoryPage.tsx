@@ -10,9 +10,16 @@ type Props = {
   descricao: string;
   produtos: Produto[];
   imagem?: string;
+  varianteCard?: "padrao" | "cabeceira";
 };
 
-export function CategoryPage({ titulo, descricao, produtos, imagem = bannerImg }: Props) {
+export function CategoryPage({
+  titulo,
+  descricao,
+  produtos,
+  imagem = bannerImg,
+  varianteCard = "padrao",
+}: Props) {
   const [tamanho, setTamanho] = useState<string>("Todos");
   const lista = useMemo(() => {
     return produtos.filter((p) => tamanho === "Todos" || p.tamanhos.includes(tamanho as never));
