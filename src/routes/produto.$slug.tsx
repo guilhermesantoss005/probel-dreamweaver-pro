@@ -203,7 +203,11 @@ function ProdutoPage() {
           <h2 className="text-2xl font-bold text-navy">Produtos relacionados</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {relacionados.map((p) => (
-              <ProductCard key={p.slug} produto={p} />
+              <ProductCard
+                key={p.slug}
+                produto={p}
+                variante={p.categoria === "cabeceiras" ? "cabeceira" : "padrao"}
+              />
             ))}
           </div>
         </section>
