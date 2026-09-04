@@ -19,6 +19,7 @@ export const Route = createFileRoute("/cabeceiras")({
       titulo="Cabeceiras"
       descricao="Acabamento estofado para compor o ambiente do seu quarto."
       produtos={porCategoria("cabeceiras")}
+      varianteCard="cabeceira"
     />
   ),
 });
