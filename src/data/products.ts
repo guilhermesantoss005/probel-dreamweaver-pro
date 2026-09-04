@@ -39,6 +39,19 @@ import trrelax from "@/assets/travesseiro-relax.jpg.asset.json";
 import tradapt_alveolado from "@/assets/travesseiro-adapt-alveolado.jpg.asset.json";
 import tradapt_d18 from "@/assets/travesseiro-adapt-d18.jpg.asset.json";
 
+import cab_toledo from "@/assets/cabeceira-toledo.jpg.asset.json";
+import cab_porto from "@/assets/cabeceira-porto.jpg.asset.json";
+import cab_isis from "@/assets/cabeceira-isis.jpg.asset.json";
+import cab_victorine from "@/assets/cabeceira-victorine.jpg.asset.json";
+import cab_luanda from "@/assets/cabeceira-luanda.jpg.asset.json";
+import cab_angra from "@/assets/cabeceira-angra.jpg.asset.json";
+import cab_rosario from "@/assets/cabeceira-rosario.jpg.asset.json";
+import cab_newyork from "@/assets/cabeceira-newyork.jpg.asset.json";
+import cab_oxford from "@/assets/cabeceira-oxford.jpg.asset.json";
+import cab_medellin from "@/assets/cabeceira-medellin.jpg.asset.json";
+import cab_monalisa from "@/assets/cabeceira-monalisa.jpg.asset.json";
+import cab_boxprime from "@/assets/cabeceira-boxprime.jpg.asset.json";
+
 export type CategoriaSlug =
   | "colchoes"
   | "conjuntos-box"
@@ -412,15 +425,257 @@ export const produtos: Produto[] = [
     oferta: true,
   },
   {
-    slug: "cabeceira-estofada-probel",
-    nome: "Cabeceira Estofada Probel",
+    slug: "cabeceira-toledo",
+    nome: "Cabeceira Toledo",
     categoria: "cabeceiras",
-    descricaoCurta: "Acabamento estofado para compor a cama.",
+    descricaoCurta: "Cabeceira Toledo — altura 135cm e profundidade 9cm.",
     descricao:
-      "Cabeceira estofada para complementar o conjunto. Consulte cores e medidas disponíveis com a equipe.",
-    caracteristicas: ["Estofada", "Cores sob consulta", "Fixação conforme o modelo"],
-    tamanhos: ["Casal", "Queen", "King"],
-    imagens: [cabeceirasImg],
+      "Cabeceira estofada Toledo com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_toledo.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-porto",
+    nome: "Cabeceira Porto",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Porto — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Porto com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_porto.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-isis",
+    nome: "Cabeceira Isis",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Isis — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Isis com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_isis.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-victorine",
+    nome: "Cabeceira Victorine",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Victorine — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Victorine com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_victorine.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-luanda",
+    nome: "Cabeceira Luanda",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Luanda — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Luanda com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_luanda.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-angra",
+    nome: "Cabeceira Angra",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Angra — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Angra com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_angra.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-rosario",
+    nome: "Cabeceira Rosário",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Rosário — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Rosário com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_rosario.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-new-york",
+    nome: "Cabeceira New York",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira New York — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada New York com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_newyork.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-oxford",
+    nome: "Cabeceira Oxford",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Oxford — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Oxford com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_oxford.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-medellin",
+    nome: "Cabeceira Medellin",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Medellin — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Medellin com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_medellin.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "cabeceira-monalisa",
+    nome: "Cabeceira Monalisa",
+    categoria: "cabeceiras",
+    descricaoCurta: "Cabeceira Monalisa — altura 135cm e profundidade 9cm.",
+    descricao:
+      "Cabeceira estofada Monalisa com altura de 135cm e profundidade de 9cm. Disponível nas larguras 92cm, 142cm, 162cm, 182cm e 197cm. Consulte tecidos e cores disponíveis com a equipe da loja.",
+    caracteristicas: [
+      "Altura: 135cm",
+      "Profundidade: 9cm",
+      "Larguras disponíveis: 92cm • 142cm • 162cm • 182cm • 197cm",
+      "Tecidos e cores sob consulta",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_monalisa.url],
+    fichaTecnica: [
+      { label: "Altura", valor: "135cm" },
+      { label: "Profundidade", valor: "9cm" },
+      { label: "Larguras disponíveis", valor: "92cm • 142cm • 162cm • 182cm • 197cm" },
+    ],
+  },
+  {
+    slug: "base-box-prime",
+    nome: "Base Box Prime",
+    categoria: "conjuntos-box",
+    descricaoCurta: "Base box nas alturas 15, 26 e 30cm com pés de alumínio.",
+    descricao:
+      "Base Box Prime disponível nas alturas de 15, 26 e 30cm. Pés com base em alumínio na cor prateado e altura de 16,5cm. Consulte tecidos e medidas com a equipe da loja.",
+    caracteristicas: [
+      "Alturas: 15, 26 e 30cm",
+      "Pés com base em alumínio",
+      "Cor dos pés: prateado",
+      "Altura dos pés: 16,5cm",
+    ],
+    tamanhos: ["Solteiro", "Casal", "Queen", "King"],
+    imagens: [cab_boxprime.url],
+    fichaTecnica: [
+      { label: "Alturas", valor: "15, 26 e 30cm" },
+      { label: "Base dos pés", valor: "Alumínio" },
+      { label: "Cor dos pés", valor: "Prateado" },
+      { label: "Altura dos pés", valor: "16,5cm" },
+    ],
   },
   {
     slug: "portinari-cama-articulavel",
