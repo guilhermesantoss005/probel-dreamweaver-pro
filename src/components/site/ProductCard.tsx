@@ -3,19 +3,33 @@ import { WhatsAppButton } from "./WhatsAppButton";
 import { nomeCategoria, type Produto } from "@/data/products";
 import { msgProduto } from "@/config/site";
 
-export function ProductCard({ produto }: { produto: Produto }) {
+export function ProductCard({
+  produto,
+  variante = "padrao",
+}: {
+  produto: Produto;
+  variante?: "padrao" | "cabeceira";
+}) {
+  const isCabeceira = variante === "cabeceira";
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
       <Link
         to="/produto/$slug"
         params={{ slug: produto.slug }}
-        className="relative block aspect-4/3 overflow-hidden bg-secondary"
+        className={`relative block overflow-hidden bg-secondary ${
+          isCabeceira ? "aspect-square p-5 sm:p-7" : "aspect-4/3"
+        }`}
       >
         <img
           src={produto.imagens[0]}
           alt={produto.nome}
           loading="lazy"
-          className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className={`transition-transform duration-500 group-hover:scale-105 ${
+            isCabeceira
+              ? "size-full object-contain"
+              : "size-full object-cover"
+          }`}
         />
       </Link>
 

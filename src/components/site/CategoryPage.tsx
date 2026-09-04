@@ -10,9 +10,16 @@ type Props = {
   descricao: string;
   produtos: Produto[];
   imagem?: string;
+  varianteCard?: "padrao" | "cabeceira";
 };
 
-export function CategoryPage({ titulo, descricao, produtos, imagem = bannerImg }: Props) {
+export function CategoryPage({
+  titulo,
+  descricao,
+  produtos,
+  imagem = bannerImg,
+  varianteCard = "padrao",
+}: Props) {
   const [tamanho, setTamanho] = useState<string>("Todos");
   const lista = useMemo(() => {
     return produtos.filter((p) => tamanho === "Todos" || p.tamanhos.includes(tamanho as never));
@@ -59,7 +66,7 @@ export function CategoryPage({ titulo, descricao, produtos, imagem = bannerImg }
         {lista.length > 0 ? (
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {lista.map((p) => (
-              <ProductCard key={p.slug} produto={p} />
+              <ProductCard key={p.slug} produto={p} variante={varianteCard} />
             ))}
           </div>
         ) : (
