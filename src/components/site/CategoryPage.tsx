@@ -66,7 +66,7 @@ export function CategoryPage({
         {lista.length > 0 ? (
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {lista.map((p) => (
-              <ProductCard key={p.slug} produto={p} />
+              <ProductCard key={p.slug} produto={p} variante={varianteCard} />
             ))}
           </div>
         ) : (
