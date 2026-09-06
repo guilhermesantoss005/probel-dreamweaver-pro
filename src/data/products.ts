@@ -40,7 +40,7 @@ import tradapt_alveolado from "@/assets/travesseiro-adapt-alveolado.jpg.asset.js
 import tradapt_d18 from "@/assets/travesseiro-adapt-d18.jpg.asset.json";
 
 import cab_toledo from "@/assets/cabeceira-toledo.jpg.asset.json";
-import cab_porto from "@/assets/cabeceira-porto.jpg.asset.json";
+import cab_porto from "@/assets/cabeceira-porto-nova.png.asset.json";
 import cab_isis from "@/assets/cabeceira-isis.jpg.asset.json";
 import cab_victorine from "@/assets/cabeceira-victorine.jpg.asset.json";
 import cab_luanda from "@/assets/cabeceira-luanda.jpg.asset.json";
