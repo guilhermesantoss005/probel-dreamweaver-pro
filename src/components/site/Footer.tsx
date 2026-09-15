@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Clock, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MSG_GERAL, site, whatsappUrl } from "@/config/site";
 import logoAsset from "@/assets/probel-logo.png.asset.json";
 
@@ -99,10 +99,6 @@ export function Footer() {
             <li className="flex gap-2.5">
               <Phone className="mt-0.5 size-4 shrink-0 text-blue-soft" />
               {site.telefone}
-            </li>
-            <li className="flex gap-2.5">
-              <Mail className="mt-0.5 size-4 shrink-0 text-blue-soft" />
-              {site.email}
             </li>
             <li className="flex gap-2.5">
               <Clock className="mt-0.5 size-4 shrink-0 text-blue-soft" />
