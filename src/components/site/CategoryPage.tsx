@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
 import { ProductCard } from "./ProductCard";
 import { WhatsAppButton } from "./WhatsAppButton";
+import { Button } from "@/components/ui/button";
 import { MSG_GERAL } from "@/config/site";
-import { TAMANHOS, type Produto } from "@/data/products";
+import { TAMANHOS, type Produto, type Tamanho } from "@/data/products";
 import bannerImg from "@/assets/banner-categoria.jpg";
 
 type Props = {
@@ -20,9 +21,11 @@ export function CategoryPage({
   imagem = bannerImg,
   varianteCard = "padrao",
 }: Props) {
-  const [tamanho, setTamanho] = useState<string>("Todos");
+  const [tamanho, setTamanho] = useState<Tamanho | "Todos">("Todos");
   const lista = useMemo(() => {
-    return produtos.filter((p) => tamanho === "Todos" || p.tamanhos.includes(tamanho as never));
+    return tamanho === "Todos"
+      ? produtos
+      : produtos.filter((produto) => produto.tamanhos.includes(tamanho));
   }, [produtos, tamanho]);
 
   return (
@@ -49,17 +52,20 @@ export function CategoryPage({
             Tamanho
           </span>
           {["Todos", ...TAMANHOS].map((t) => (
-            <button
+            <Button
               key={t}
+              type="button"
+              variant="outline"
+              aria-pressed={tamanho === t}
               onClick={() => setTamanho(t)}
-              className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
+              className={`h-auto rounded-full px-3.5 py-1.5 text-sm font-medium ${
                 tamanho === t
                   ? "border-accent bg-accent text-accent-foreground"
                   : "border-border text-navy hover:border-accent hover:text-accent"
               }`}
             >
               {t}
-            </button>
+            </Button>
           ))}
         </div>
 

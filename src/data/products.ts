@@ -123,6 +123,7 @@ export type Produto = {
   slug: string;
   nome: string;
   categoria: CategoriaSlug;
+  categoriasAdicionais?: CategoriaSlug[];
   descricaoCurta: string;
   descricao: string;
   caracteristicas: string[];
@@ -141,6 +142,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-probel-michelini-ultra-gel",
     nome: "Michelini Ultra Gel | Linha Ouro",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Conforto firme com HR Gel, Pillow Europeu e suporte de 200 kg por pessoa.",
     descricao:
@@ -185,6 +187,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-probel-laguna-gel",
     nome: "Laguna Gel | Linha Bronze",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Molas ensacadas, Espuma D24 Soft Gel e Pillow Euro com 26 cm de altura.",
     descricao:
@@ -230,6 +233,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-probel-pro-hotel-vip-45",
     nome: "Pró Hotel VIP 45 | Linha Prata",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Molas ensacadas, Pillow Euro Duplo e conforto intermediário. Dupla face.",
     descricao:
@@ -264,6 +268,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-probel-maximus-plus",
     nome: "Maximus Plus | Linha Bronze",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Molas ensacadas com base em EPS, Euro Pillow e conforto intermediário.",
     descricao:
@@ -299,6 +304,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-probel-guarda-costas-robuste",
     nome: "Guarda Costas Robuste | Linha Prata",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Conforto firme com toque macio, Pillow Super e suporte de 200 kg por pessoa.",
     descricao:
@@ -334,6 +340,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-queen-probel-guarda-costas-star",
     nome: "Guarda Costas Star | Linha Prata",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Molas ensacadas, Pillow Super e conforto intermediário para macio.",
     descricao:
@@ -366,6 +373,7 @@ export const produtos: Produto[] = [
     slug: "conjunto-box-queen-probel-athos-bambu-new",
     nome: "Conjunto Box Queen Mola Ensacada Probel Athos Bambu New",
     categoria: "conjuntos-box",
+    categoriasAdicionais: ["colchoes"],
     descricaoCurta:
       "Queen com molas ensacadas, Pillow Super e suporte de 140 kg por pessoa.",
     descricao:
@@ -1046,7 +1054,9 @@ const porLinha = (lista: Produto[]) =>
 export const produtosVisiveis = () => porLinha(produtos.filter((p) => p.visivel !== false));
 
 export const porCategoria = (slug: CategoriaSlug) =>
-  produtosVisiveis().filter((p) => p.categoria === slug);
+  produtosVisiveis().filter(
+    (p) => p.categoria === slug || p.categoriasAdicionais?.includes(slug),
+  );
 
 export const destaques = () => produtosVisiveis().filter((p) => p.destaque);
 
