@@ -92,8 +92,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Probel Store — Colchões, Conjuntos Box e Travesseiros" },
       { property: "og:description", content: "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp." },
       { name: "twitter:description", content: "Loja autorizada Probel Colchões. Encontre colchões, conjuntos box, box baú, cabeceiras e travesseiros com atendimento especializado pelo WhatsApp." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a781b0aa-0462-4d0a-89f6-cdf9dc79fb34/id-preview-d06a2985--7b98c11e-f090-4685-9ae7-1db6176e9525.lovable.app-1785349503157.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a781b0aa-0462-4d0a-89f6-cdf9dc79fb34/id-preview-d06a2985--7b98c11e-f090-4685-9ae7-1db6176e9525.lovable.app-1785349503157.png" },
     ],
     links: [
       {
