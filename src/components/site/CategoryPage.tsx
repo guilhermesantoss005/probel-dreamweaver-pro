@@ -3,7 +3,7 @@ import { ProductCard } from "./ProductCard";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { MSG_GERAL } from "@/config/site";
-import { TAMANHOS, type Produto, type Tamanho } from "@/data/products";
+import { type Produto, type Tamanho } from "@/data/products";
 import bannerImg from "@/assets/banner-categoria.jpg";
 
 type Props = {
@@ -14,7 +14,11 @@ type Props = {
   varianteCard?: "padrao" | "cabeceira";
 };
 
-const FILTROS_TAMANHO: Array<Tamanho | "Todos"> = ["Todos", ...TAMANHOS];
+const FILTROS_TAMANHO: Array<Tamanho | "Todos"> = [
+  "Todos",
+  "Solteiro",
+  "Casal",
+];
 
 export function CategoryPage({
   titulo,
