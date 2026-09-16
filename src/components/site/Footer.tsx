@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MSG_GERAL, site, whatsappUrl } from "@/config/site";
-import logoAsset from "@/assets/probel-logo.png.asset.json";
+import logoAsset from "@/assets/probel-logo.png";
 
 const institucional = [
   { to: "/sobre", label: "Sobre nós" },
@@ -23,7 +23,7 @@ export function Footer() {
         <div>
           <div className="inline-flex items-center rounded-xl bg-primary-foreground px-4 py-3">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt={`Logomarca ${site.nome}`}
               width={825}
               height={299}

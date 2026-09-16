@@ -4,53 +4,53 @@ import bauImg from "@/assets/cat-boxbau.jpg";
 import cabeceirasImg from "@/assets/cat-cabeceiras.jpg";
 import travesseirosImg from "@/assets/cat-travesseiros.jpg";
 import ambienteImg from "@/assets/banner-categoria.jpg";
-import guardaCostasStar from "@/assets/guarda-costas-star-nova.png.asset.json";
-import athos1 from "@/assets/athos-177777.webp.asset.json";
-import athos2 from "@/assets/athos-177779.webp.asset.json";
-import athos3 from "@/assets/athos-177778.webp.asset.json";
-import athos4 from "@/assets/athos-177780.webp.asset.json";
-import proHotelVip from "@/assets/pro-hotel-vip-45-nova.png.asset.json";
-import micheliniUltraGel from "@/assets/michelini-ultra-gel-nova.png.asset.json";
-import lagunaGel from "@/assets/laguna-gel.png.asset.json";
-import lagunaGel2 from "@/assets/laguna-gel-2.png.asset.json";
-import lagunaGel3 from "@/assets/laguna-gel-3.png.asset.json";
-import maximusPlus1 from "@/assets/maximus-plus-1.png.asset.json";
-import maximusPlus2 from "@/assets/maximus-plus-2.png.asset.json";
-import robuste1 from "@/assets/robuste-169078.webp.asset.json";
-import robuste2 from "@/assets/robuste-169077.webp.asset.json";
-import robuste3 from "@/assets/robuste-169076.webp.asset.json";
-import robuste4 from "@/assets/robuste-169079.webp.asset.json";
-import boxBau from "@/assets/box-bau.png.asset.json";
-import portinari from "@/assets/portinari-articulavel-nova.png.asset.json";
-import trpoesy from "@/assets/travesseiro-poesy.jpg.asset.json";
-import trfuture from "@/assets/travesseiro-future.jpg.asset.json";
-import trboost from "@/assets/travesseiro-boost.jpg.asset.json";
-import trmax from "@/assets/travesseiro-max.jpg.asset.json";
-import tronly_latex from "@/assets/travesseiro-only-latex.jpg.asset.json";
-import trtesouros from "@/assets/travesseiro-tesouros.jpg.asset.json";
-import trbemdizer from "@/assets/travesseiro-bemdizer.jpg.asset.json";
-import trsensitive from "@/assets/travesseiro-sensitive.jpg.asset.json";
-import trcalma from "@/assets/travesseiro-calma.jpg.asset.json";
-import trdivino from "@/assets/travesseiro-divino.jpg.asset.json";
-import tratlantis from "@/assets/travesseiro-atlantis.jpg.asset.json";
-import trguarda_costas from "@/assets/travesseiro-guarda-costas.jpg.asset.json";
-import trisis from "@/assets/travesseiro-isis.jpg.asset.json";
-import trrelax from "@/assets/travesseiro-relax.jpg.asset.json";
-import tradapt_alveolado from "@/assets/travesseiro-adapt-alveolado.jpg.asset.json";
-import tradapt_d18 from "@/assets/travesseiro-adapt-d18.jpg.asset.json";
+import guardaCostasStar from "@/assets/guarda-costas-star-nova.png";
+import athos1 from "@/assets/athos-177777.webp";
+import athos2 from "@/assets/athos-177779.webp";
+import athos3 from "@/assets/athos-177778.webp";
+import athos4 from "@/assets/athos-177780.webp";
+import proHotelVip from "@/assets/pro-hotel-vip-45-nova.png";
+import micheliniUltraGel from "@/assets/michelini-ultra-gel-nova.png";
+import lagunaGel from "@/assets/laguna-gel.png";
+import lagunaGel2 from "@/assets/laguna-gel-2.png";
+import lagunaGel3 from "@/assets/laguna-gel-3.png";
+import maximusPlus1 from "@/assets/maximus-plus-1.png";
+import maximusPlus2 from "@/assets/maximus-plus-2.png";
+import robuste1 from "@/assets/robuste-169078.webp";
+import robuste2 from "@/assets/robuste-169077.webp";
+import robuste3 from "@/assets/robuste-169076.webp";
+import robuste4 from "@/assets/robuste-169079.webp";
+import boxBau from "@/assets/box-bau.png";
+import portinari from "@/assets/portinari-articulavel-nova.png";
+import trpoesy from "@/assets/travesseiro-poesy.jpg";
+import trfuture from "@/assets/travesseiro-future.jpg";
+import trboost from "@/assets/travesseiro-boost.jpg";
+import trmax from "@/assets/travesseiro-max.jpg";
+import tronly_latex from "@/assets/travesseiro-only-latex.jpg";
+import trtesouros from "@/assets/travesseiro-tesouros.jpg";
+import trbemdizer from "@/assets/travesseiro-bemdizer.jpg";
+import trsensitive from "@/assets/travesseiro-sensitive.jpg";
+import trcalma from "@/assets/travesseiro-calma.jpg";
+import trdivino from "@/assets/travesseiro-divino.jpg";
+import tratlantis from "@/assets/travesseiro-atlantis.jpg";
+import trguarda_costas from "@/assets/travesseiro-guarda-costas.jpg";
+import trisis from "@/assets/travesseiro-isis.jpg";
+import trrelax from "@/assets/travesseiro-relax.jpg";
+import tradapt_alveolado from "@/assets/travesseiro-adapt-alveolado.jpg";
+import tradapt_d18 from "@/assets/travesseiro-adapt-d18.jpg";
 
-import cab_toledo from "@/assets/cabeceira-toledo.jpg.asset.json";
-import cab_porto from "@/assets/cabeceira-porto-listrada.png.asset.json";
-import cab_isis from "@/assets/cabeceira-isis.jpg.asset.json";
-import cab_victorine from "@/assets/cabeceira-victorine.jpg.asset.json";
-import cab_luanda from "@/assets/cabeceira-luanda.jpg.asset.json";
-import cab_angra from "@/assets/cabeceira-angra.jpg.asset.json";
-import cab_rosario from "@/assets/cabeceira-rosario.jpg.asset.json";
-import cab_newyork from "@/assets/cabeceira-newyork.jpg.asset.json";
-import cab_oxford from "@/assets/cabeceira-oxford.jpg.asset.json";
-import cab_medellin from "@/assets/cabeceira-medellin.jpg.asset.json";
-import cab_monalisa from "@/assets/cabeceira-monalisa.jpg.asset.json";
-import cab_boxprime from "@/assets/cabeceira-boxprime.jpg.asset.json";
+import cab_toledo from "@/assets/cabeceira-toledo.jpg";
+import cab_porto from "@/assets/cabeceira-porto-listrada.png";
+import cab_isis from "@/assets/cabeceira-isis.jpg";
+import cab_victorine from "@/assets/cabeceira-victorine.jpg";
+import cab_luanda from "@/assets/cabeceira-luanda.jpg";
+import cab_angra from "@/assets/cabeceira-angra.jpg";
+import cab_rosario from "@/assets/cabeceira-rosario.jpg";
+import cab_newyork from "@/assets/cabeceira-newyork.jpg";
+import cab_oxford from "@/assets/cabeceira-oxford.jpg";
+import cab_medellin from "@/assets/cabeceira-medellin.jpg";
+import cab_monalisa from "@/assets/cabeceira-monalisa.jpg";
+import cab_boxprime from "@/assets/cabeceira-boxprime.jpg";
 
 export type CategoriaSlug =
   | "colchoes"
@@ -100,7 +100,7 @@ export const categorias: Categoria[] = [
     slug: "box-bau",
     nome: "Box Baú",
     descricao: "Espaço extra de armazenamento sem abrir mão do conforto.",
-    imagem: boxBau.url,
+    imagem: boxBau,
     rota: "/box-bau",
   },
   {
@@ -155,7 +155,7 @@ export const produtos: Produto[] = [
       "Suporte de até 200 kg por pessoa",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [micheliniUltraGel.url],
+    imagens: [micheliniUltraGel],
     destaque: true,
     sobre: [
       "Perfis que priorizam firmeza e estabilidade encontram no Michelini Ultra Gel uma estrutura preparada para oferecer suporte consistente mesmo sob maiores exigências.",
@@ -202,7 +202,7 @@ export const produtos: Produto[] = [
       "Certificação Inmetro nº 75/2021",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [lagunaGel2.url, lagunaGel.url, lagunaGel3.url],
+    imagens: [lagunaGel2, lagunaGel, lagunaGel3],
     destaque: true,
     sobre: [
       "Tecido em malha 280 g branca com detalhes em bege.",
@@ -246,7 +246,7 @@ export const produtos: Produto[] = [
       "Dupla face (pode ser utilizado dos dois lados)",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [proHotelVip.url],
+    imagens: [proHotelVip],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Pró Hotel VIP 45 | Linha Prata" },
@@ -283,7 +283,7 @@ export const produtos: Produto[] = [
       "Suporte de até 110 kg por pessoa",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [maximusPlus2.url, maximusPlus1.url],
+    imagens: [maximusPlus2, maximusPlus1],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Maximus Plus" },
@@ -317,7 +317,7 @@ export const produtos: Produto[] = [
       "Suporte de até 200 kg por pessoa",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [robuste1.url, robuste2.url, robuste3.url, robuste4.url],
+    imagens: [robuste1, robuste2, robuste3, robuste4],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Guarda Costas Robuste | Linha Prata" },
@@ -352,7 +352,7 @@ export const produtos: Produto[] = [
       "Suporte de até 120 kg por pessoa",
     ],
     tamanhos: ["Casal", "Queen", "King"],
-    imagens: [guardaCostasStar.url],
+    imagens: [guardaCostasStar],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Guarda Costas Star | Linha Prata" },
@@ -385,7 +385,7 @@ export const produtos: Produto[] = [
       "Manutenção No Turn (apenas girar)",
     ],
     tamanhos: ["Queen"],
-    imagens: [athos2.url, athos3.url, athos1.url, athos4.url],
+    imagens: [athos2, athos3, athos1, athos4],
     destaque: true,
     sobre: [
       "O Conjunto Box Queen Probel Athos Bambu New reúne o sistema de molas ensacadas individualmente com Pillow Super, entregando conforto e estabilidade para o casal — quando um se movimenta, o outro não sente.",
@@ -428,7 +428,7 @@ export const produtos: Produto[] = [
       "Base box baú com abertura frontal ou lateral conforme a medida. Consulte a loja para verificar opções.",
     caracteristicas: ["Espaço interno para guardar itens", "Revestimento sob consulta", "Pés inclusos"],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [boxBau.url, bauImg, ambienteImg],
+    imagens: [boxBau, bauImg, ambienteImg],
     destaque: true,
     oferta: true,
   },
@@ -446,7 +446,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_toledo.url],
+    imagens: [cab_toledo],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -467,7 +467,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_porto.url],
+    imagens: [cab_porto],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -488,7 +488,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_isis.url],
+    imagens: [cab_isis],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -509,7 +509,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_victorine.url],
+    imagens: [cab_victorine],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -530,7 +530,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_luanda.url],
+    imagens: [cab_luanda],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -551,7 +551,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_angra.url],
+    imagens: [cab_angra],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -572,7 +572,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_rosario.url],
+    imagens: [cab_rosario],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -593,7 +593,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_newyork.url],
+    imagens: [cab_newyork],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -614,7 +614,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_oxford.url],
+    imagens: [cab_oxford],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -635,7 +635,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_medellin.url],
+    imagens: [cab_medellin],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -656,7 +656,7 @@ export const produtos: Produto[] = [
       "Tecidos e cores sob consulta",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_monalisa.url],
+    imagens: [cab_monalisa],
     fichaTecnica: [
       { label: "Altura", valor: "135cm" },
       { label: "Profundidade", valor: "9cm" },
@@ -677,7 +677,7 @@ export const produtos: Produto[] = [
       "Altura dos pés: 16,5cm",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [cab_boxprime.url],
+    imagens: [cab_boxprime],
     fichaTecnica: [
       { label: "Alturas", valor: "15, 26 e 30cm" },
       { label: "Base dos pés", valor: "Alumínio" },
@@ -703,7 +703,7 @@ export const produtos: Produto[] = [
       "Box opcional em corino ou suede (cores sob consulta)",
     ],
     tamanhos: ["Solteiro", "Casal", "Queen", "King"],
-    imagens: [portinari.url],
+    imagens: [portinari],
     destaque: true,
     sobre: [
       "A Portinari é a cama articulável da Probel: o movimento do estrado permite elevar cabeceira e pernas para leitura, TV, descanso e melhor circulação.",
@@ -736,7 +736,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trpoesy.url],
+    imagens: [trpoesy],
     fichaTecnica: [
       { label: "Enchimento", valor: "Fibra" },
       { label: "Peso", valor: "850g" },
@@ -755,7 +755,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 130cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trfuture.url],
+    imagens: [trfuture],
     fichaTecnica: [
       { label: "Enchimento", valor: "Fibra" },
       { label: "Tamanho para fronhas", valor: "40cm x 130cm" },
@@ -774,7 +774,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trboost.url],
+    imagens: [trboost],
     fichaTecnica: [
       { label: "Enchimento", valor: "Espuma D15" },
       { label: "Altura", valor: "12cm ou 14cm" },
@@ -794,7 +794,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trmax.url],
+    imagens: [trmax],
     fichaTecnica: [
       { label: "Enchimento", valor: "Fibra" },
       { label: "Peso", valor: "650g" },
@@ -814,7 +814,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [tronly_latex.url],
+    imagens: [tronly_latex],
     fichaTecnica: [
       { label: "Enchimento", valor: "Látex" },
       { label: "Altura", valor: "12cm" },
@@ -834,7 +834,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trtesouros.url],
+    imagens: [trtesouros],
     fichaTecnica: [
       { label: "Enchimento", valor: "High Resilience" },
       { label: "Altura", valor: "12cm ou 14cm" },
@@ -854,7 +854,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trbemdizer.url],
+    imagens: [trbemdizer],
     fichaTecnica: [
       { label: "Enchimento", valor: "Visco D40" },
       { label: "Altura", valor: "12cm ou 14cm" },
@@ -874,7 +874,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 50cm x 70cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trsensitive.url],
+    imagens: [trsensitive],
     fichaTecnica: [
       { label: "Enchimento", valor: "Visco D40" },
       { label: "Altura", valor: "14cm" },
@@ -894,7 +894,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trcalma.url],
+    imagens: [trcalma],
     fichaTecnica: [
       { label: "Enchimento", valor: "Visco D30" },
       { label: "Altura", valor: "12cm ou 14cm" },
@@ -914,7 +914,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trdivino.url],
+    imagens: [trdivino],
     fichaTecnica: [
       { label: "Enchimento", valor: "D24 Hiper Soft" },
       { label: "Altura", valor: "12cm ou 14cm" },
@@ -934,7 +934,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 50cm x 70cm",
     ],
     tamanhos: ["Único"],
-    imagens: [tratlantis.url],
+    imagens: [tratlantis],
     fichaTecnica: [
       { label: "Enchimento", valor: "D24 Hiper Soft" },
       { label: "Altura", valor: "14cm" },
@@ -954,7 +954,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trguarda_costas.url],
+    imagens: [trguarda_costas],
     fichaTecnica: [
       { label: "Enchimento", valor: "D24 Soft" },
       { label: "Altura", valor: "12cm ou 14cm" },
@@ -974,7 +974,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 50cm x 70cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trisis.url],
+    imagens: [trisis],
     fichaTecnica: [
       { label: "Enchimento", valor: "Fibra" },
       { label: "Altura", valor: "14cm" },
@@ -994,7 +994,7 @@ export const produtos: Produto[] = [
       "Tamanho para fronhas: 40cm x 60cm",
     ],
     tamanhos: ["Único"],
-    imagens: [trrelax.url],
+    imagens: [trrelax],
     fichaTecnica: [
       { label: "Enchimento", valor: "Flocos de espuma" },
       { label: "Peso", valor: "800g" },
@@ -1013,7 +1013,7 @@ export const produtos: Produto[] = [
       "Medida: 40 x 60 x 72",
     ],
     tamanhos: ["Único"],
-    imagens: [tradapt_alveolado.url],
+    imagens: [tradapt_alveolado],
     fichaTecnica: [
       { label: "Enchimento", valor: "D18 alveolado" },
       { label: "Medida", valor: "40 x 60 x 72" },
@@ -1031,7 +1031,7 @@ export const produtos: Produto[] = [
       "Medida: 40 x 60 x 72",
     ],
     tamanhos: ["Único"],
-    imagens: [tradapt_d18.url],
+    imagens: [tradapt_d18],
     fichaTecnica: [
       { label: "Enchimento", valor: "D18" },
       { label: "Medida", valor: "40 x 60 x 72" },

@@ -10,7 +10,7 @@ import {
   Star,
 } from "lucide-react";
 import heroImg from "@/assets/hero-bedroom.jpg";
-import heroCapa from "@/assets/hero-capa.png.asset.json";
+import heroCapa from "@/assets/hero-capa.png";
 import lojaImg from "@/assets/loja.jpg";
 import { categorias, destaques, TAMANHOS } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
@@ -78,7 +78,7 @@ function Index() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={heroCapa.url}
+          src={heroCapa}
           alt="Quarto sofisticado com cama e colchão premium"
           width={1536}
           height={1024}

@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { MSG_GERAL, site } from "@/config/site";
 import { track } from "@/lib/analytics";
-import logoAsset from "@/assets/probel-logo.png.asset.json";
+import logoAsset from "@/assets/probel-logo.png";
 
 export const navLinks = [
   { to: "/", label: "Início" },
@@ -23,7 +23,7 @@ function Logo() {
   return (
     <Link to="/" className="flex shrink-0 items-center" aria-label={site.nome}>
       <img
-        src={logoAsset.url}
+        src={logoAsset}
         alt={`Logomarca ${site.nome}`}
         width={825}
         height={299}
