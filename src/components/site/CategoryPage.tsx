@@ -14,6 +14,8 @@ type Props = {
   varianteCard?: "padrao" | "cabeceira";
 };
 
+const FILTROS_TAMANHO: Array<Tamanho | "Todos"> = ["Todos", ...TAMANHOS];
+
 export function CategoryPage({
   titulo,
   descricao,
@@ -51,7 +53,7 @@ export function CategoryPage({
           <span className="mr-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Tamanho
           </span>
-          {["Todos", ...TAMANHOS].map((t) => (
+          {FILTROS_TAMANHO.map((t) => (
             <Button
               key={t}
               type="button"
