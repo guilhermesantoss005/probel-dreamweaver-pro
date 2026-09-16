@@ -14,7 +14,11 @@ type Props = {
   varianteCard?: "padrao" | "cabeceira";
 };
 
-const FILTROS_TAMANHO: Array<Tamanho | "Todos"> = ["Todos", ...TAMANHOS];
+const FILTROS_TAMANHO: Array<Tamanho | "Todos"> = [
+  "Todos",
+  "Solteiro",
+  "Casal",
+];
 
 export function CategoryPage({
   titulo,
