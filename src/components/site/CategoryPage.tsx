@@ -3,7 +3,7 @@ import { ProductCard } from "./ProductCard";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { MSG_GERAL } from "@/config/site";
-import { TAMANHOS, type Produto, type Tamanho } from "@/data/products";
+import { type Produto, type Tamanho } from "@/data/products";
 import bannerImg from "@/assets/banner-categoria.jpg";
 
 type Props = {
