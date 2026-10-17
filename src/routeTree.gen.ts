@@ -9,56 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TravesseirosRouteImport } from './routes/travesseiros'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as OfertasRouteImport } from './routes/ofertas'
-import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as ConjuntosBoxRouteImport } from './routes/conjuntos-box'
-import { Route as ColchoesRouteImport } from './routes/colchoes'
-import { Route as CabeceirasRouteImport } from './routes/cabeceiras'
-import { Route as BuscaRouteImport } from './routes/busca'
-import { Route as BoxBauRouteImport } from './routes/box-bau'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BoxBauRouteImport } from './routes/box-bau'
+import { Route as BuscaRouteImport } from './routes/busca'
+import { Route as CabeceirasRouteImport } from './routes/cabeceiras'
+import { Route as ColchoesRouteImport } from './routes/colchoes'
+import { Route as ConjuntosBoxRouteImport } from './routes/conjuntos-box'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TravesseirosRouteImport } from './routes/travesseiros'
 import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 
-const TravesseirosRoute = TravesseirosRouteImport.update({
-  id: '/travesseiros',
-  path: '/travesseiros',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OfertasRoute = OfertasRouteImport.update({
-  id: '/ofertas',
-  path: '/ofertas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContatoRoute = ContatoRouteImport.update({
-  id: '/contato',
-  path: '/contato',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConjuntosBoxRoute = ConjuntosBoxRouteImport.update({
-  id: '/conjuntos-box',
-  path: '/conjuntos-box',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ColchoesRoute = ColchoesRouteImport.update({
-  id: '/colchoes',
-  path: '/colchoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CabeceirasRoute = CabeceirasRouteImport.update({
-  id: '/cabeceiras',
-  path: '/cabeceiras',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BuscaRoute = BuscaRouteImport.update({
-  id: '/busca',
-  path: '/busca',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BoxBauRoute = BoxBauRouteImport.update({
@@ -66,9 +31,44 @@ const BoxBauRoute = BoxBauRouteImport.update({
   path: '/box-bau',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const BuscaRoute = BuscaRouteImport.update({
+  id: '/busca',
+  path: '/busca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CabeceirasRoute = CabeceirasRouteImport.update({
+  id: '/cabeceiras',
+  path: '/cabeceiras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColchoesRoute = ColchoesRouteImport.update({
+  id: '/colchoes',
+  path: '/colchoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConjuntosBoxRoute = ConjuntosBoxRouteImport.update({
+  id: '/conjuntos-box',
+  path: '/conjuntos-box',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertasRoute = OfertasRouteImport.update({
+  id: '/ofertas',
+  path: '/ofertas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TravesseirosRoute = TravesseirosRouteImport.update({
+  id: '/travesseiros',
+  path: '/travesseiros',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProdutoSlugRoute = ProdutoSlugRouteImport.update({
@@ -175,60 +175,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/travesseiros': {
-      id: '/travesseiros'
-      path: '/travesseiros'
-      fullPath: '/travesseiros'
-      preLoaderRoute: typeof TravesseirosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ofertas': {
-      id: '/ofertas'
-      path: '/ofertas'
-      fullPath: '/ofertas'
-      preLoaderRoute: typeof OfertasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contato': {
-      id: '/contato'
-      path: '/contato'
-      fullPath: '/contato'
-      preLoaderRoute: typeof ContatoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/conjuntos-box': {
-      id: '/conjuntos-box'
-      path: '/conjuntos-box'
-      fullPath: '/conjuntos-box'
-      preLoaderRoute: typeof ConjuntosBoxRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/colchoes': {
-      id: '/colchoes'
-      path: '/colchoes'
-      fullPath: '/colchoes'
-      preLoaderRoute: typeof ColchoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cabeceiras': {
-      id: '/cabeceiras'
-      path: '/cabeceiras'
-      fullPath: '/cabeceiras'
-      preLoaderRoute: typeof CabeceirasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/busca': {
-      id: '/busca'
-      path: '/busca'
-      fullPath: '/busca'
-      preLoaderRoute: typeof BuscaRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/box-bau': {
@@ -238,11 +189,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BoxBauRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/busca': {
+      id: '/busca'
+      path: '/busca'
+      fullPath: '/busca'
+      preLoaderRoute: typeof BuscaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cabeceiras': {
+      id: '/cabeceiras'
+      path: '/cabeceiras'
+      fullPath: '/cabeceiras'
+      preLoaderRoute: typeof CabeceirasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/colchoes': {
+      id: '/colchoes'
+      path: '/colchoes'
+      fullPath: '/colchoes'
+      preLoaderRoute: typeof ColchoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conjuntos-box': {
+      id: '/conjuntos-box'
+      path: '/conjuntos-box'
+      fullPath: '/conjuntos-box'
+      preLoaderRoute: typeof ConjuntosBoxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ofertas': {
+      id: '/ofertas'
+      path: '/ofertas'
+      fullPath: '/ofertas'
+      preLoaderRoute: typeof OfertasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/travesseiros': {
+      id: '/travesseiros'
+      path: '/travesseiros'
+      fullPath: '/travesseiros'
+      preLoaderRoute: typeof TravesseirosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/produto/$slug': {

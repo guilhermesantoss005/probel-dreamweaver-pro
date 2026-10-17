@@ -6,12 +6,14 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
+import { BlackFridayBar } from "../components/site/BlackFridayBar";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
 
@@ -37,7 +39,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -133,6 +135,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
+          <BlackFridayBar />
           <Header />
           <main className="flex-1">
             {/* Required: nested routes render here. */}
