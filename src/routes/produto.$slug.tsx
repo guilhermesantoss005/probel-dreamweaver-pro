@@ -10,7 +10,6 @@ import {
   nomeCategoria,
   porCategoria,
   type Produto,
-  type Tamanho,
 } from "@/data/products";
 
 export const Route = createFileRoute("/produto/$slug")({
@@ -39,11 +38,9 @@ export const Route = createFileRoute("/produto/$slug")({
 function ProdutoPage() {
   const { produto } = Route.useLoaderData() as { produto: Produto };
   const [img, setImg] = useState(0);
-  const [tamanho, setTamanho] = useState(produto.tamanhos[0]);
 
   useEffect(() => {
     setImg(0);
-    setTamanho(produto.tamanhos[0]);
     track("ViewContent", { content_name: produto.nome });
   }, [produto]);
 
@@ -109,26 +106,6 @@ function ProdutoPage() {
             </span>
             <h1 className="mt-1 text-3xl font-bold text-navy sm:text-4xl">{produto.nome}</h1>
 
-            <div className="mt-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                Tamanhos disponíveis
-              </p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {produto.tamanhos.map((t: Tamanho) => (
-                  <button
-                    key={t}
-                    onClick={() => setTamanho(t)}
-                    className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                      tamanho === t
-                        ? "border-accent bg-accent text-accent-foreground"
-                        : "border-border text-navy hover:border-accent"
-                    }`}
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             <p className="mt-6 text-sm text-muted-foreground">{produto.descricao}</p>
 
@@ -143,7 +120,7 @@ function ProdutoPage() {
 
             <div className="mt-8">
               <WhatsAppButton
-                mensagem={msgProduto(produto.nome, tamanho)}
+                mensagem={msgProduto(produto.nome)}
                 evento="Lead"
                 produto={produto.nome}
                 className="w-full py-3.5 text-base sm:w-auto sm:px-8"
@@ -188,7 +165,7 @@ function ProdutoPage() {
             ))}
           </dl>
           <WhatsAppButton
-            mensagem={msgProduto(produto.nome, tamanho)}
+            mensagem={msgProduto(produto.nome)}
             evento="Lead"
             produto={produto.nome}
             className="mt-8 px-7 py-3.5 text-base"
