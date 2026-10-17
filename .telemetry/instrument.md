@@ -5,8 +5,8 @@
 ## Arquitetura
 | Peça | Arquivo | Papel |
 |------|---------|-------|
-| ID público | `src/lib/google-analytics.functions.ts` | Server function que lê e valida `GOOGLE_ANALYTICS_MEASUREMENT_ID` (`G-31EFTQ7Q9H` no ambiente publicado). |
-| Inicialização | `src/routes/__root.tsx` → `initializeGoogleAnalytics()` | Roda uma vez: `gtag('js')`, `gtag('config')` (page_view inicial) e injeta o script. |
+| ID público | `src/config/analytics.ts` | `GA_MEASUREMENT_ID = "G-31EFTQ7Q9H"` fixo no código. Sem variável de ambiente: o deploy da Vercel (domínio dos anúncios) não tem nenhuma. |
+| Tag | `src/routes/__root.tsx` → `RootShell` | Snippet oficial (`gtag/js` + `gtag('config')`) renderizado no `<head>` pelo servidor. Vai no HTML entregue, que é o que o "Teste a conexão" do Google lê. |
 | Page views internos | `src/routes/__root.tsx` → `trackPageView()` | Dispara quando `resolvedLocation` muda, ou seja, depois que a nova rota renderizou, com o título certo. |
 | Eventos | `src/lib/analytics.ts` | Constante `EVENTS`, uma função por evento, mapeamento para o Meta Pixel. |
 
@@ -14,7 +14,7 @@
 - Nunca chamar `gtag()`/`fbq()` direto nos componentes. Usar `trackSearch`, `trackViewItem` e `trackWhatsAppLead`.
 - Todo `<WhatsAppButton>` exige `origem` (o tipo `CtaLocation`). Para um botão novo, acrescente o valor ao tipo e ao enum do plano.
 - Botão de WhatsApp de um produto: passe `produto={produto}` para enviar `product_id`, `product_name` e `product_category`.
-- Não colar o snippet do Google no `<head>`. A tag já é carregada pela rota raiz, e um segundo snippet duplicaria tudo.
+- Não colar outro snippet do Google (nem pela Lovable, nem pela Vercel). A tag já está no `<head>` da rota raiz, e uma segunda duplicaria tudo.
 
 ## Configuração fora do código (obrigatória)
 1. **GA4 → Admin → Fluxos de dados → (site) → Medição otimizada ⚙ → Visualizações de página → Mostrar configurações avançadas** → desmarcar *"Alterações de página com base em eventos do histórico do navegador"* → Salvar.

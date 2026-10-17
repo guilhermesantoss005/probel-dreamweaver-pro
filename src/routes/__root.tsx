@@ -17,8 +17,8 @@ import { Header } from "../components/site/Header";
 import { BlackFridayBar } from "../components/site/BlackFridayBar";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
-import { getGoogleAnalyticsConfig } from "../lib/google-analytics.functions";
-import { initializeGoogleAnalytics, trackPageView } from "../lib/analytics";
+import { GA_INLINE_SNIPPET, GA_MEASUREMENT_ID } from "../config/analytics";
+import { trackPageView } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -81,7 +81,6 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  loader: () => getGoogleAnalyticsConfig(),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -121,9 +120,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
+        {/* Google tag (gtag.js), renderizada pelo servidor para o verificador do
+            Google Ads / GA4 encontrar a tag no HTML entregue. */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script dangerouslySetInnerHTML={{ __html: GA_INLINE_SNIPPET }} />
       </head>
       <body>
         {children}
@@ -135,14 +138,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const { measurementId } = Route.useLoaderData();
   // resolvedLocation só muda depois que a nova rota renderizou, então o título já está atualizado.
   const resolvedHref = useRouterState({ select: (state) => state.resolvedLocation?.href });
 
-  useEffect(() => {
-    if (measurementId) initializeGoogleAnalytics(measurementId);
-  }, [measurementId]);
-
+  // O page_view da primeira página vem do gtag('config') no <head>; este efeito
+  // cobre só as navegações internas (ver trackPageView).
   useEffect(() => {
     if (resolvedHref) trackPageView();
   }, [resolvedHref]);

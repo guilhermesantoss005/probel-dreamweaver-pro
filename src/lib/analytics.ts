@@ -47,32 +47,14 @@ export type CtaLocation =
 
 export type ProdutoTracking = Pick<Produto, "slug" | "nome" | "categoria">;
 
-let initialized = false;
+// A tag do Google (gtag.js + gtag('config')) vem no <head> renderizado pelo servidor:
+// src/routes/__root.tsx + src/config/analytics.ts. Nada aqui injeta script.
+
+/** undefined até a primeira página; o page_view dela vem do gtag('config'). */
 let lastPageLocation: string | undefined;
 
 function analyticsWindow() {
   return typeof window === "undefined" ? undefined : (window as AnalyticsWindow);
-}
-
-/** Carrega a tag do Google uma única vez. O gtag config envia o page_view da primeira página. */
-export function initializeGoogleAnalytics(measurementId: string) {
-  const w = analyticsWindow();
-  if (!w || initialized || !/^G-[A-Z0-9]+$/.test(measurementId)) return;
-  w.dataLayer = w.dataLayer || [];
-  w.gtag = function (..._args: unknown[]) {
-    // O gtag.js só reconhece o objeto `arguments`; um array comum seria ignorado.
-    // eslint-disable-next-line prefer-rest-params
-    w.dataLayer?.push(arguments);
-  };
-  w.gtag("set", "developer_id.dZjgwMW", true);
-  w.gtag("js", new Date());
-  w.gtag("config", measurementId);
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
-  document.head.appendChild(script);
-  initialized = true;
-  lastPageLocation = w.location.href;
 }
 
 /**
@@ -82,13 +64,20 @@ export function initializeGoogleAnalytics(measurementId: string) {
  */
 export function trackPageView() {
   const w = analyticsWindow();
-  if (!w || !initialized || w.location.href === lastPageLocation) return;
+  if (!w) return;
+  const href = w.location.href;
+  // Primeira página: o gtag('config') do <head> já enviou o page_view.
+  if (lastPageLocation === undefined) {
+    lastPageLocation = href;
+    return;
+  }
+  if (href === lastPageLocation) return;
   w.gtag?.("event", EVENTS.PAGE_VIEW, {
-    page_location: w.location.href,
+    page_location: href,
     page_referrer: lastPageLocation,
     page_title: document.title,
   });
-  lastPageLocation = w.location.href;
+  lastPageLocation = href;
 }
 
 function send(event: Exclude<EventName, "page_view">, params: Params, metaParams: Params) {
