@@ -16,6 +16,9 @@ import lagunaGel2 from "@/assets/laguna-gel-2.png";
 import lagunaGel3 from "@/assets/laguna-gel-3.png";
 import maximusPlus1 from "@/assets/maximus-plus-1.png";
 import maximusPlus2 from "@/assets/maximus-plus-2.png";
+import solteiroMaximus1 from "@/assets/colchao-solteiro-maximus-plus.webp.asset.json";
+import solteiroMaximus2 from "@/assets/colchao-solteiro-maximus-plus-2.webp.asset.json";
+import solteiroMaximus3 from "@/assets/colchao-solteiro-maximus-plus-3.webp.asset.json";
 import robuste1 from "@/assets/robuste-169078.webp";
 import robuste2 from "@/assets/robuste-169077.webp";
 import robuste3 from "@/assets/robuste-169076.webp";
@@ -262,6 +265,55 @@ export const produtos: Produto[] = [
       { label: "Suporte de peso", valor: "Até 150 kg por pessoa" },
       { label: "Sistema de uso", valor: "Dupla Face (pode ser utilizado dos dois lados)" },
       { label: "Certificação", valor: "Produto certificado conforme Portaria Inmetro nº 75/2021" },
+    ],
+  },
+  {
+    slug: "colchao-solteiro-maximus-plus-probel",
+    nome: "Colchão Solteiro Mola Ensacada Máximus Plus Probel",
+    categoria: "colchoes",
+    descricaoCurta:
+      "Colchão de solteiro com molas ensacadas, Euro Pillow e 26 cm de altura.",
+    descricao:
+      "Colchão de solteiro com molas ensacadas individualmente, base de suporte em EPS, Euro Pillow, espuma D28 no estofamento, 26 cm de altura e suporte de até 110 kg por pessoa. Indicado também para casais com biotipos diferentes.",
+    caracteristicas: [
+      "Molas ensacadas individualmente",
+      "Euro Pillow",
+      "Espuma D28 no estofamento",
+      "Base de suporte em EPS",
+      "Apenas girar (não necessita virar)",
+      "Certificado pelo Inmetro",
+      "Suporte de até 110 kg por pessoa",
+    ],
+    tamanhos: ["Solteiro"],
+    imagens: [solteiroMaximus1.url, solteiroMaximus2.url, solteiroMaximus3.url],
+    destaque: true,
+    fichaTecnica: [
+      { label: "Modelo", valor: "Máximus Plus" },
+      { label: "Sistema de Molejo", valor: "Molas Ensacadas" },
+      { label: "Nível de Firmeza", valor: "Intermediário" },
+      { label: "Suporte de peso", valor: "110 kg por pessoa" },
+      { label: "Tamanho", valor: "Solteiro" },
+      { label: "Largura", valor: "88 cm" },
+      { label: "Comprimento", valor: "188 cm" },
+      { label: "Altura", valor: "26 cm" },
+      { label: "Altura do Colchão", valor: "26 cm" },
+      { label: "Espuma do Estofamento", valor: "D28" },
+      { label: "Espuma Matelassê", valor: "D20 Cilíndrica" },
+      { label: "Pillow", valor: "Euro" },
+      { label: "Tecido Tampo", valor: "Malha Branca com detalhes Marrom" },
+      { label: "Gramatura Tecido", valor: "170 g/m²" },
+      { label: "Base de Suporte do Colchão", valor: "EPS" },
+      { label: "Manutenção", valor: "Apenas Girar" },
+      { label: "Garantia", valor: "12 meses (molas e espuma), 3 meses (tecido)" },
+      {
+        label: "Indicação Biotipos Casais",
+        valor: "Indicado também para casais com biotipos diferentes",
+      },
+      {
+        label: "Certificação Inmetro",
+        valor:
+          "Fábrica GO - 004646/2024, Fábrica MS - 013683/2024, Fábrica MT - 006380/2024, Fábrica PB - 005483/2024",
+      },
     ],
   },
   {

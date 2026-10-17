@@ -22,7 +22,7 @@ export const site = {
 export const MSG_GERAL =
   "Olá, tudo bem? Vim do site e gostaria de mais informações.";
 
-export const WHATSAPP_PHONE = "5548999818302";
+export const WHATSAPP_PHONE = "5548984414284";
 
 // Link único de WhatsApp usado em todos os botões do site (com a mensagem do contexto).
 export const whatsappUrl = (mensagem: string = MSG_GERAL) =>
