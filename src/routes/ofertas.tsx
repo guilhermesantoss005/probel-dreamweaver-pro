@@ -5,6 +5,8 @@ import { ofertas } from "@/data/products";
 export const Route = createFileRoute("/ofertas")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Ofertas | Probel Store" },
       {
         name: "description",

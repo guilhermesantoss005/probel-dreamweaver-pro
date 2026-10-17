@@ -5,6 +5,8 @@ import { porCategoria } from "@/data/products";
 export const Route = createFileRoute("/conjuntos-box")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Conjuntos Box | Probel Store" },
       {
         name: "description",

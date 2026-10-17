@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
   type ErrorComponentProps,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -16,6 +17,8 @@ import { Header } from "../components/site/Header";
 import { BlackFridayBar } from "../components/site/BlackFridayBar";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
+import { getGoogleAnalyticsConfig } from "../lib/google-analytics.functions";
+import { initializeGoogleAnalytics } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -78,6 +81,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  loader: () => getGoogleAnalyticsConfig(),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -131,6 +135,12 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { measurementId } = Route.useLoaderData();
+  const pagePath = useRouterState({ select: (state) => state.location.pathname + state.location.searchStr });
+
+  useEffect(() => {
+    if (measurementId) initializeGoogleAnalytics(measurementId, pagePath);
+  }, [measurementId, pagePath]);
 
   return (
     <QueryClientProvider client={queryClient}>

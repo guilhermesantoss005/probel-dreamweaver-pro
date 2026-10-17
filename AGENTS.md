@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Load the public GA4 measurement ID through a validated server-function boundary and initialize analytics once in the root layout; this keeps runtime configuration available after publish without exposing credentials or duplicating tags.
