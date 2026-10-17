@@ -20,6 +20,8 @@ import { MSG_GERAL, site } from "@/config/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Probel Store — Colchões, Conjuntos Box e Travesseiros" },
       {
         name: "description",

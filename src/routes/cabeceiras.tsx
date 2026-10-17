@@ -5,6 +5,8 @@ import { porCategoria } from "@/data/products";
 export const Route = createFileRoute("/cabeceiras")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Cabeceiras | Probel Store" },
       {
         name: "description",

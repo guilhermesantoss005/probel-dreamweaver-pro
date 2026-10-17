@@ -5,6 +5,8 @@ import { porCategoria } from "@/data/products";
 export const Route = createFileRoute("/box-bau")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Box Baú | Probel Store" },
       {
         name: "description",

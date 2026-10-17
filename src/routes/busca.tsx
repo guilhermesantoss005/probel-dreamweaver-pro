@@ -10,6 +10,8 @@ export const Route = createFileRoute("/busca")({
   validateSearch: zodValidator(z.object({ q: fallback(z.string(), "").default("") })),
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Busca | Probel Store" },
       { name: "description", content: "Busque colchões, conjuntos box, cabeceiras e travesseiros." },
       { property: "og:title", content: "Busca | Probel Store" },

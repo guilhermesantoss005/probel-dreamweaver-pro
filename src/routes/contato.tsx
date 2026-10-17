@@ -6,6 +6,8 @@ import { MSG_GERAL, site } from "@/config/site";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Contato | Probel Store" },
       {
         name: "description",
