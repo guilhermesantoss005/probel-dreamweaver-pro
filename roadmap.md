@@ -1,5 +1,8 @@
 # Roadmap
 
 ## Aberto
-- Devolver ao site o único colchão de solteiro que foi removido (ident qual modelo e recolocar com foto e ficha).
-- Adicionar barra fina no topo do site com o texto "Black Friday", em preto e azul.
+- Cadastrar "Colchão Solteiro Mola Ensacada Máximus Plus Probel" (solteiro) com ficha técnica e fotos.
+- Trocar o número do WhatsApp em todos os botões para 5548984414284 (mensagem padrão e mensagens personalizadas).
+
+## Concluído
+- Barra fina de Black Friday no topo, em preto e azul.
