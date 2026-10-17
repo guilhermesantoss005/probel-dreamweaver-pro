@@ -106,7 +106,7 @@ function Index() {
               >
                 Conheça os colchões <ArrowRight className="size-4" />
               </Link>
-              <WhatsAppButton mensagem={MSG_GERAL} className="px-6 py-3">
+              <WhatsAppButton mensagem={MSG_GERAL} origem="home_hero" className="px-6 py-3">
                 Fale com um especialista
               </WhatsAppButton>
             </div>
@@ -215,7 +215,7 @@ function Index() {
           </div>
           <WhatsAppButton
             mensagem="Olá! Vim pelo site e gostaria de consultar as ofertas disponíveis."
-            evento="Lead"
+            origem="home_ofertas"
             className="px-7 py-3.5 text-base"
           >
             Consultar ofertas no WhatsApp
@@ -333,7 +333,7 @@ function Index() {
           </p>
           <WhatsAppButton
             mensagem={MSG_GERAL}
-            evento="Lead"
+            origem="home_cta_final"
             className="mt-8 px-8 py-4 text-base"
           >
             Conversar pelo WhatsApp

@@ -58,8 +58,8 @@ export function ProductCard({
           </Link>
           <WhatsAppButton
             mensagem={msgProduto(produto.nome)}
-            evento="Lead"
-            produto={produto.nome}
+            origem="card_produto"
+            produto={produto}
             className="w-full"
           >
             Comprar pelo WhatsApp

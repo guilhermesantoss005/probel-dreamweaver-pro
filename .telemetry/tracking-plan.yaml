@@ -1,0 +1,121 @@
+meta:
+  product: "Probel Store (Probel Colchões de Canasvieiras)"
+  version: "1.0.0"
+  created: 2026-10-17
+  updated: 2026-10-17
+  implemented: 2026-10-17 # src/lib/analytics.ts (EVENTS + trackSearch, trackViewItem, trackWhatsAppLead, trackPageView)
+  owner: "Guilherme (marketing)"
+  destinations: [ga4, google_ads, meta_pixel]
+  naming: "Eventos recomendados do GA4 (snake_case). O Meta Pixel recebe o evento padrão equivalente (ver meta_pixel_event)."
+  pii_policy: none
+  internal_user_policy: "Sem filtro no código. Excluir tráfego interno no GA4 (Admin > Fluxos de dados > Definir tráfego interno)."
+  google_tag: "G-31EFTQ7Q9H"
+  google_ads_primary_conversion: "generate_lead (evento principal no GA4, importado no Google Ads)"
+
+entities:
+  user:
+    id_property: none # visitante anônimo; o GA4 usa client_id
+    traits: []
+
+groups: [] # B2C, sem hierarquia de grupos
+
+events:
+  # -- Navegação --
+  - name: page_view
+    category: navigation
+    description: "Uma visualização por página. A primeira vem do gtag config; as navegações internas são enviadas manualmente depois que a rota carrega (título correto)."
+    meta_pixel_event: PageView # quando o Pixel for instalado
+    properties:
+      - name: page_location
+        type: string
+        required: true
+      - name: page_title
+        type: string
+        required: true
+      - name: page_referrer
+        type: string
+        required: false
+    expected_frequency: high
+    notes: "Exige desligar, no GA4, 'Alterações de página com base em eventos do histórico do navegador' na Medição otimizada. Sem isso, cada navegação conta duas vezes."
+
+  # -- Descoberta --
+  - name: search
+    category: navigation
+    description: "Visitante envia uma busca no cabeçalho."
+    meta_pixel_event: Search
+    properties:
+      - name: search_term
+        type: string
+        required: true
+    expected_frequency: medium
+
+  # -- Interesse --
+  - name: view_item
+    category: core_value
+    description: "Visitante abre a página de um produto."
+    meta_pixel_event: ViewContent
+    properties:
+      - name: items
+        type: array
+        required: true
+        item_fields: [item_id (slug), item_name, item_brand (Probel), item_category]
+    expected_frequency: medium
+
+  # -- Conversão (ação principal) --
+  - name: generate_lead
+    category: core_value
+    description: "Visitante clica em qualquer botão ou link de WhatsApp. É a conversão do Google Ads."
+    meta_pixel_event: Contact
+    is_key_event: true
+    properties:
+      - name: lead_source
+        type: string
+        enum: [whatsapp]
+        required: true
+      - name: cta_location
+        type: string
+        enum:
+          - cabecalho
+          - menu_mobile
+          - botao_flutuante
+          - rodape
+          - home_hero
+          - home_ofertas
+          - home_cta_final
+          - card_produto
+          - pagina_produto
+          - pagina_produto_ficha
+          - categoria_vazia
+          - busca_vazia
+          - pagina_contato
+          - pagina_sobre
+        required: true
+      - name: product_id
+        type: string
+        required: false
+      - name: product_name
+        type: string
+        required: false
+      - name: product_category
+        type: string
+        enum: [colchoes, conjuntos-box, box-bau, cabeceiras, travesseiros]
+        required: false
+    expected_frequency: medium
+
+ga4_admin:
+  key_events: [generate_lead]
+  custom_dimensions_event_scope: [cta_location, product_name, product_category]
+  enhanced_measurement:
+    page_changes_based_on_browser_history: false
+    keep_on: [scrolls, outbound_clicks] # os demais podem ficar no padrão
+
+google_ads:
+  primary_conversion:
+    source: "GA4 import: generate_lead"
+    name: "Lead WhatsApp"
+    count: one # uma conversão por clique em anúncio
+  existing_conversion_to_fix:
+    name: "Solicitar cotação"
+    event: ads_conversion_Solicitar_cota_o_1
+    observed: "Dispara ao carregar /colchoes (regra de URL)."
+    action: "Trocar para Secundária ou remover, para não somar visitas como leads."

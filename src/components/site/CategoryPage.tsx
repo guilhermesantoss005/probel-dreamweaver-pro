@@ -86,7 +86,7 @@ export function CategoryPage({
             <p className="text-sm text-muted-foreground">
               Nenhum produto encontrado com esse filtro.
             </p>
-            <WhatsAppButton mensagem={MSG_GERAL} className="mt-5">
+            <WhatsAppButton mensagem={MSG_GERAL} origem="categoria_vazia" className="mt-5">
               Consultar disponibilidade
             </WhatsAppButton>
           </div>

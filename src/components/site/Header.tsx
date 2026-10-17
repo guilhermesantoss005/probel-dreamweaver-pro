@@ -4,7 +4,7 @@ import { Menu, Search, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { MSG_GERAL, site } from "@/config/site";
-import { track } from "@/lib/analytics";
+import { trackSearch } from "@/lib/analytics";
 import logoAsset from "@/assets/probel-logo.png";
 
 export const navLinks = [
@@ -42,7 +42,7 @@ function SearchBox({ onDone }: { onDone?: () => void }) {
       onSubmit={(e) => {
         e.preventDefault();
         if (!q.trim()) return;
-        track("Search", { search_string: q });
+        trackSearch(q.trim());
         navigate({ to: "/busca", search: { q } });
         onDone?.();
       }}
@@ -71,7 +71,7 @@ export function Header() {
           <SearchBox />
         </div>
         <div className="flex items-center gap-1.5 sm:gap-2">
-          <WhatsAppButton mensagem={MSG_GERAL} className="hidden md:inline-flex">
+          <WhatsAppButton mensagem={MSG_GERAL} origem="cabecalho" className="hidden md:inline-flex">
             Falar no WhatsApp
           </WhatsAppButton>
           <Sheet open={menu} onOpenChange={setMenu}>
@@ -108,7 +108,7 @@ export function Header() {
                 ))}
               </nav>
               <div className="px-4 pb-6">
-                <WhatsAppButton mensagem={MSG_GERAL} className="w-full" />
+                <WhatsAppButton mensagem={MSG_GERAL} origem="menu_mobile" className="w-full" />
               </div>
             </SheetContent>
           </Sheet>

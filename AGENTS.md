@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Load the public GA4 measurement ID through a validated server-function boundary and initialize analytics once in the root layout; this keeps runtime configuration available after publish without exposing credentials or duplicating tags.
+- Send analytics events only through the typed helpers in `src/lib/analytics.ts` (GA4 recommended names: `search`, `view_item`, `generate_lead`); every `WhatsAppButton` needs an `origem` value, since `generate_lead` is the Google Ads conversion. The tracking plan lives in `.telemetry/tracking-plan.yaml`.

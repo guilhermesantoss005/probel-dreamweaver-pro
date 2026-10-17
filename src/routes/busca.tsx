@@ -39,7 +39,7 @@ function Busca() {
       ) : (
         <div className="mt-10 rounded-2xl border border-dashed border-border p-10 text-center">
           <p className="text-sm text-muted-foreground">Nenhum produto encontrado.</p>
-          <WhatsAppButton mensagem={MSG_GERAL} className="mt-5">
+          <WhatsAppButton mensagem={MSG_GERAL} origem="busca_vazia" className="mt-5">
             Consultar com a equipe
           </WhatsAppButton>
         </div>

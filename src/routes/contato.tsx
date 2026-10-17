@@ -47,7 +47,11 @@ function Contato() {
           </div>
         ))}
       </div>
-      <WhatsAppButton mensagem={MSG_GERAL} evento="Lead" className="mt-10 px-7 py-3.5 text-base">
+      <WhatsAppButton
+        mensagem={MSG_GERAL}
+        origem="pagina_contato"
+        className="mt-10 px-7 py-3.5 text-base"
+      >
         Conversar pelo WhatsApp
       </WhatsAppButton>
 

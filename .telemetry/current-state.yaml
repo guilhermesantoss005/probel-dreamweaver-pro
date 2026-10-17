@@ -1,0 +1,84 @@
+# Current State: reverse-engineered from codebase + live site (probel-dreamweaver-pro.lovable.app)
+# Scanned: 2026-10-17
+# SDK: Google tag (gtag.js) G-31EFTQ7Q9H, loaded manually; Meta Pixel (fbq) referenced but not loaded
+
+events:
+  - name: "page_view"
+    status: LIVE
+    locations:
+      - file: "src/lib/analytics.ts"
+        line: 26 # gtag('config') automatic page_view on first load
+      - file: "src/lib/analytics.ts"
+        line: 34 # manual page_view on every route change
+    properties: [page_path, page_title]
+    source: frontend
+    notes: "Live site sends 2 page_view hits per client-side navigation (manual + GA4 enhanced measurement history change). Both carry the previous page's title."
+
+  - name: "ViewContent"
+    status: LIVE
+    locations:
+      - file: "src/routes/produto.$slug.tsx"
+        line: 46
+    properties: [content_name]
+    source: frontend
+
+  - name: "Search"
+    status: LIVE
+    locations:
+      - file: "src/components/site/Header.tsx"
+        line: 45
+    properties: [search_string]
+    source: frontend
+
+  - name: "Contact"
+    status: LIVE
+    locations:
+      - file: "src/components/site/WhatsAppFloat.tsx"
+        line: 12
+      - file: "src/components/site/WhatsAppButton.tsx"
+        line: 28 # default evento; used by Header, CategoryPage, busca, sobre, index hero
+    properties: [origem, content_name]
+    source: frontend
+
+  - name: "Lead"
+    status: LIVE
+    locations:
+      - file: "src/components/site/WhatsAppButton.tsx"
+        line: 28 # evento="Lead" in ProductCard, produto.$slug (x2), contato, index (ofertas, CTA final)
+    properties: [content_name]
+    source: frontend
+
+  - name: "AddToCart"
+    status: ORPHANED # declared in EventName union, never called
+    locations:
+      - file: "src/lib/analytics.ts"
+        line: 42
+    properties: []
+    source: frontend
+
+  - name: "InitiateCheckout"
+    status: ORPHANED # allowed as WhatsAppButton evento, never passed
+    locations:
+      - file: "src/lib/analytics.ts"
+        line: 43
+    properties: []
+    source: frontend
+
+  - name: "ads_conversion_Solicitar_cota_o_1"
+    status: LIVE # not in the code: created inside the Google tag config (Google Ads conversion "Solicitar cotação")
+    locations:
+      - file: "(Google tag configuration, outside the repo)"
+        line: 0
+    properties: []
+    source: google_tag_config
+    notes: "Fires on page load of /colchoes and sends a Google Ads conversion (www.google.com/measurement/conversion). Does not fire on WhatsApp clicks."
+
+identity:
+  identify_calls: [] # anonymous storefront, no login
+  group_calls: []
+
+patterns:
+  naming_style: "PascalCase (Meta Pixel standard names) for custom events; snake_case for GA4 page_view"
+  naming_format: "Meta standard event names reused as GA4 event names"
+  centralized: true # src/lib/analytics.ts track() wrapper
+  error_handling: "No try/catch; calls are guarded by optional chaining on window.gtag / window.fbq"

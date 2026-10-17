@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Clock, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MSG_GERAL, site, whatsappUrl } from "@/config/site";
+import { trackWhatsAppLead } from "@/lib/analytics";
 import logoAsset from "@/assets/probel-logo.png";
 
 const institucional = [
@@ -45,6 +46,7 @@ export function Footer() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={label === "WhatsApp" ? () => trackWhatsAppLead("rodape") : undefined}
                 className="grid size-9 place-items-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-primary-foreground/20"
               >
                 <Icon className="size-4" />

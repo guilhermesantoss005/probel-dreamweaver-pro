@@ -18,7 +18,7 @@ import { BlackFridayBar } from "../components/site/BlackFridayBar";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
 import { getGoogleAnalyticsConfig } from "../lib/google-analytics.functions";
-import { initializeGoogleAnalytics } from "../lib/analytics";
+import { initializeGoogleAnalytics, trackPageView } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -136,11 +136,16 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const { measurementId } = Route.useLoaderData();
-  const pagePath = useRouterState({ select: (state) => state.location.pathname + state.location.searchStr });
+  // resolvedLocation só muda depois que a nova rota renderizou, então o título já está atualizado.
+  const resolvedHref = useRouterState({ select: (state) => state.resolvedLocation?.href });
 
   useEffect(() => {
-    if (measurementId) initializeGoogleAnalytics(measurementId, pagePath);
-  }, [measurementId, pagePath]);
+    if (measurementId) initializeGoogleAnalytics(measurementId);
+  }, [measurementId]);
+
+  useEffect(() => {
+    if (resolvedHref) trackPageView();
+  }, [resolvedHref]);
 
   return (
     <QueryClientProvider client={queryClient}>

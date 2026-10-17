@@ -3,7 +3,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { ProductCard } from "@/components/site/ProductCard";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
-import { track } from "@/lib/analytics";
+import { trackViewItem } from "@/lib/analytics";
 import { msgProduto, site } from "@/config/site";
 import {
   getProduto,
@@ -43,7 +43,7 @@ function ProdutoPage() {
 
   useEffect(() => {
     setImg(0);
-    track("ViewContent", { content_name: produto.nome });
+    trackViewItem(produto);
   }, [produto]);
 
   const relacionados = porCategoria(produto.categoria)
@@ -123,8 +123,8 @@ function ProdutoPage() {
             <div className="mt-8">
               <WhatsAppButton
                 mensagem={msgProduto(produto.nome)}
-                evento="Lead"
-                produto={produto.nome}
+                origem="pagina_produto"
+                produto={produto}
                 className="w-full py-3.5 text-base sm:w-auto sm:px-8"
               >
                 Comprar pelo WhatsApp
@@ -168,8 +168,8 @@ function ProdutoPage() {
           </dl>
           <WhatsAppButton
             mensagem={msgProduto(produto.nome)}
-            evento="Lead"
-            produto={produto.nome}
+            origem="pagina_produto_ficha"
+            produto={produto}
             className="mt-8 px-7 py-3.5 text-base"
           >
             Comprar pelo WhatsApp

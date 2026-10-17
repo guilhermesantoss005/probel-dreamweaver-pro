@@ -50,7 +50,7 @@ function Sobre() {
           </div>
         ))}
       </dl>
-      <WhatsAppButton mensagem={MSG_GERAL} className="mt-10 px-7 py-3.5">
+      <WhatsAppButton mensagem={MSG_GERAL} origem="pagina_sobre" className="mt-10 px-7 py-3.5">
         Falar com a loja
       </WhatsAppButton>
     </section>
