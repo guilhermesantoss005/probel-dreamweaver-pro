@@ -16,9 +16,9 @@ import lagunaGel2 from "@/assets/laguna-gel-2.png";
 import lagunaGel3 from "@/assets/laguna-gel-3.png";
 import maximusPlus1 from "@/assets/maximus-plus-1.png";
 import maximusPlus2 from "@/assets/maximus-plus-2.png";
-import solteiroMaximus1 from "@/assets/colchao-solteiro-maximus-plus.webp";
-import solteiroMaximus2 from "@/assets/colchao-solteiro-maximus-plus-2.webp";
-import solteiroMaximus3 from "@/assets/colchao-solteiro-maximus-plus-3.webp";
+import solteiroMaximus1 from "@/assets/colchao-solteiro-maximus-plus.webp.asset.json";
+import solteiroMaximus2 from "@/assets/colchao-solteiro-maximus-plus-2.webp.asset.json";
+import solteiroMaximus3 from "@/assets/colchao-solteiro-maximus-plus-3.webp.asset.json";
 import robuste1 from "@/assets/robuste-169078.webp";
 import robuste2 from "@/assets/robuste-169077.webp";
 import robuste3 from "@/assets/robuste-169076.webp";
@@ -285,7 +285,7 @@ export const produtos: Produto[] = [
       "Suporte de até 110 kg por pessoa",
     ],
     tamanhos: ["Solteiro"],
-    imagens: [solteiroMaximus1, solteiroMaximus2, solteiroMaximus3],
+    imagens: [solteiroMaximus1.url, solteiroMaximus2.url, solteiroMaximus3.url],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Máximus Plus" },
