@@ -137,6 +137,8 @@ export type Produto = {
   oferta?: boolean;
   destaque?: boolean;
   visivel?: boolean;
+  /** Exibe a foto inteira (sem recorte) em cards e galeria. */
+  imagemInteira?: boolean;
 };
 
 // Produtos de exemplo — edite, oculte (visivel: false) ou adicione livremente.
@@ -285,8 +287,9 @@ export const produtos: Produto[] = [
       "Suporte de até 110 kg por pessoa",
     ],
     tamanhos: ["Solteiro"],
-    imagens: [solteiroMaximus3.url, solteiroMaximus2.url, solteiroMaximus1.url],
+    imagens: [solteiroMaximus2.url, solteiroMaximus3.url, solteiroMaximus1.url],
     destaque: true,
+    imagemInteira: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Máximus Plus" },
       { label: "Sistema de Molejo", valor: "Molas Ensacadas" },
