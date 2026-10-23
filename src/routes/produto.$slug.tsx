@@ -64,14 +64,14 @@ function ProdutoPage() {
           <div>
             <div
               className={`overflow-hidden rounded-2xl border border-border bg-secondary ${
-                produto.categoria === "cabeceiras" ? "p-6 sm:p-10" : ""
+                produto.categoria === "cabeceiras" || produto.imagemInteira ? "p-6 sm:p-10" : ""
               }`}
             >
               <img
                 src={produto.imagens[img]}
                 alt={produto.nome}
                 className={`w-full ${
-                  produto.categoria === "cabeceiras"
+                  produto.categoria === "cabeceiras" || produto.imagemInteira
                     ? "aspect-4/3 object-contain"
                     : "aspect-4/3 object-cover"
                 }`}
@@ -86,14 +86,14 @@ function ProdutoPage() {
                     aria-label={`Imagem ${i + 1}`}
                     className={`size-20 overflow-hidden rounded-xl border-2 transition-colors ${
                       i === img ? "border-accent" : "border-border"
-                    } ${produto.categoria === "cabeceiras" ? "bg-secondary p-1.5" : ""}`}
+                    } ${produto.categoria === "cabeceiras" || produto.imagemInteira ? "bg-secondary p-1.5" : ""}`}
                   >
                     <img
                       src={src}
                       alt=""
                       loading="lazy"
                       className={`size-full ${
-                        produto.categoria === "cabeceiras" ? "object-contain" : "object-cover"
+                        produto.categoria === "cabeceiras" || produto.imagemInteira ? "object-contain" : "object-cover"
                       }`}
                     />
                   </button>

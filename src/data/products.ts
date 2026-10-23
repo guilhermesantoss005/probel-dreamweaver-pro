@@ -289,6 +289,7 @@ export const produtos: Produto[] = [
     tamanhos: ["Solteiro"],
     imagens: [solteiroMaximus2.url, solteiroMaximus3.url, solteiroMaximus1.url],
     destaque: true,
+    imagemInteira: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Máximus Plus" },
       { label: "Sistema de Molejo", valor: "Molas Ensacadas" },

@@ -18,7 +18,7 @@ export function ProductCard({
         to="/produto/$slug"
         params={{ slug: produto.slug }}
         className={`relative block overflow-hidden bg-secondary ${
-          isCabeceira ? "aspect-square p-5 sm:p-7" : "aspect-4/3"
+          isCabeceira || produto.imagemInteira ? "aspect-square p-5 sm:p-7" : "aspect-4/3"
         }`}
       >
         <img
@@ -26,7 +26,7 @@ export function ProductCard({
           alt={produto.nome}
           loading="lazy"
           className={`transition-transform duration-500 group-hover:scale-105 ${
-            isCabeceira
+            isCabeceira || produto.imagemInteira
               ? "size-full object-contain"
               : "size-full object-cover"
           }`}
