@@ -137,6 +137,8 @@ export type Produto = {
   oferta?: boolean;
   destaque?: boolean;
   visivel?: boolean;
+  /** Exibe a foto inteira (sem recorte) em cards e galeria. */
+  imagemInteira?: boolean;
 };
 
 // Produtos de exemplo — edite, oculte (visivel: false) ou adicione livremente.
