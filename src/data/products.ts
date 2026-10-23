@@ -285,7 +285,7 @@ export const produtos: Produto[] = [
       "Suporte de até 110 kg por pessoa",
     ],
     tamanhos: ["Solteiro"],
-    imagens: [solteiroMaximus1.url, solteiroMaximus2.url, solteiroMaximus3.url],
+    imagens: [solteiroMaximus3.url, solteiroMaximus2.url, solteiroMaximus1.url],
     destaque: true,
     fichaTecnica: [
       { label: "Modelo", valor: "Máximus Plus" },
