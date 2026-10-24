@@ -2,7 +2,7 @@ meta:
   product: "Probel Store (Probel Colchões de Canasvieiras)"
   version: "1.0.0"
   created: 2026-10-17
-  updated: 2026-10-17
+   updated: 2026-10-24
   implemented: 2026-10-17 # src/lib/analytics.ts (EVENTS + trackSearch, trackViewItem, trackWhatsAppLead, trackPageView)
   owner: "Guilherme (marketing)"
   destinations: [ga4, google_ads, meta_pixel]
@@ -10,7 +10,7 @@ meta:
   pii_policy: none
   internal_user_policy: "Sem filtro no código. Excluir tráfego interno no GA4 (Admin > Fluxos de dados > Definir tráfego interno)."
   google_tag: "G-31EFTQ7Q9H"
-  google_ads_primary_conversion: "generate_lead (evento principal no GA4, importado no Google Ads)"
+  google_ads_primary_conversion: "Contato: AW-16680866532/x4bvCKHSrKgdEOSlh5I- (clique WhatsApp, envio direto)"
 
 entities:
   user:
@@ -111,8 +111,8 @@ ga4_admin:
 
 google_ads:
   primary_conversion:
-    source: "GA4 import: generate_lead"
-    name: "Lead WhatsApp"
+    source: "Direct Google Ads: AW-16680866532/x4bvCKHSrKgdEOSlh5I-"
+    name: "Contato"
     count: one # uma conversão por clique em anúncio
   existing_conversion_to_fix:
     name: "Solicitar cotação"

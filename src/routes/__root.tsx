@@ -19,6 +19,7 @@ import { Footer } from "../components/site/Footer";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
 import { GA_INLINE_SNIPPET, GA_MEASUREMENT_ID } from "../config/analytics";
 import { trackPageView } from "../lib/analytics";
+import { PrivacyNotice } from "../components/site/PrivacyNotice";
 
 function NotFoundComponent() {
   return (
@@ -125,7 +126,8 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
         {/* Google tag (gtag.js), renderizada pelo servidor para o verificador do
             Google Ads / GA4 encontrar a tag no HTML entregue. */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        {/* Inert until the regional check permits tracking; no Google request before then. */}
+        <script id="probel-google-tag" async data-src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
         <script dangerouslySetInnerHTML={{ __html: GA_INLINE_SNIPPET }} />
       </head>
       <body>
@@ -145,6 +147,8 @@ function RootComponent() {
   // cobre só as navegações internas (ver trackPageView).
   useEffect(() => {
     if (resolvedHref) trackPageView();
+    window.addEventListener("probel:privacy-change", trackPageView);
+    return () => window.removeEventListener("probel:privacy-change", trackPageView);
   }, [resolvedHref]);
 
   return (
@@ -158,6 +162,7 @@ function RootComponent() {
           </main>
           <Footer />
           <WhatsAppFloat />
+          <PrivacyNotice />
         </div>
     </QueryClientProvider>
   );

@@ -3,6 +3,8 @@ import { Clock, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { MSG_GERAL, site, whatsappUrl } from "@/config/site";
 import { trackWhatsAppLead } from "@/lib/analytics";
 import logoAsset from "@/assets/probel-logo.png";
+import { Button } from "@/components/ui/button";
+import { openPrivacySettings } from "@/lib/privacy";
 
 const institucional = [
   { to: "/sobre", label: "Sobre nós" },
@@ -12,7 +14,7 @@ const institucional = [
 ];
 
 const ajuda = [
-  { to: "/contato", label: "Política de privacidade" },
+  { to: "/privacidade", label: "Política de privacidade" },
   { to: "/contato", label: "Trocas e devoluções" },
   { to: "/contato", label: "Perguntas frequentes" },
 ];
@@ -68,6 +70,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          <Button variant="link" onClick={openPrivacySettings} className="mt-3 h-auto whitespace-normal p-0 text-sm text-primary-foreground/80">Configurações de privacidade</Button>
         </div>
 
         <div>

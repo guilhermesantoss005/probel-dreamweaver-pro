@@ -1,5 +1,13 @@
 ## Current Implementation
 
+### Update 2026-10-24 (supersedes historical notes below)
+- One server-rendered, initially inert Google script element; its data-src activates after same-origin /cdn-cgi/trace (2s) and the latest stored privacy decision permit tracking.
+- Public constants: GA4 G-31EFTQ7Q9H; Ads AW-16680866532; direct WhatsApp conversion AW-16680866532/x4bvCKHSrKgdEOSlh5I-.
+- Default deny, regional notice, equal accept/reject, withdrawal, cross-tab synchronization and GPC/DNT opt-outs. Matching disabled. No Meta installation.
+- Consent evidence and per-conversion decision references are stored in the visitor's browser, not in a central database. Storage failures block conversions.
+- No server reporting or matching. No replay of blocked actions. Page views are manual after permission.
+- Provider receipt/account eligibility and published deployment remain unverified; no account connection is available and no publishing was requested.
+
 **SDK:** Google tag (gtag.js) carregado de `https://www.googletagmanager.com/gtag/js?id=G-31EFTQ7Q9H` (sem pacote npm)
 **Captured:** 2026-10-17
 

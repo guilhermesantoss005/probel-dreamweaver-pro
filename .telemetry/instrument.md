@@ -1,5 +1,13 @@
 # Guia de instrumentação: Google tag (gtag.js), GA4 + Google Ads
 
+## Atualização 2026-10-24 — substitui as instruções antigas abaixo
+- O snippet inicial nega consentimento e ativa o único elemento Google no head após a verificação regional e a decisão atual permitirem medição. A tag fica inerte antes disso.
+- Conversão direta Contato: AW-16680866532/x4bvCKHSrKgdEOSlh5I-, somente clique no WhatsApp; não visita a /contato.
+- generate_lead continua no GA4 para análise. Não importar esse mesmo evento como outra conversão principal no Ads: isso duplicaria o resultado. A conta ainda precisa ser conferida.
+- Configurações de privacidade no rodapé; política em /privacidade; registros locais do visitante, data, região, aviso e escolhas, com referência em cada conversão permitida.
+- Não há instalação Meta nem correspondência de clientes. Não reenviar eventos bloqueados.
+- Publicação e recebimento no Google ainda não verificados.
+
 **Plano:** `.telemetry/tracking-plan.yaml` v1.0.0 · **Atualizado:** 2026-10-17
 
 ## Arquitetura
