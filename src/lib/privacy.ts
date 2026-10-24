@@ -36,3 +36,19 @@ export function saveConsent(choice: "granted" | "denied") {
 export function openPrivacySettings() {
   window.dispatchEvent(new Event("probel:privacy-settings"));
 }
+export function recordConversionConsent() {
+  const record = readConsent();
+  const decision = record?.history.at(-1);
+  const reference = {
+    at: new Date().toISOString(), region: window.probelPrivacy?.region || null,
+    visitor: record?.visitor || null, choiceAt: decision?.at || null,
+    advertising: decision?.advertising || "regional_permission",
+    noticeVersion: decision?.notice.version || CONSENT_NOTICE.version,
+  };
+  try {
+    const key = "probel_conversion_consent_v1";
+    const previous = JSON.parse(localStorage.getItem(key) || "[]");
+    localStorage.setItem(key, JSON.stringify([...(Array.isArray(previous) ? previous : []), reference]));
+    return true;
+  } catch { return false; }
+}

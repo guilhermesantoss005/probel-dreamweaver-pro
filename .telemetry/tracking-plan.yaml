@@ -2,7 +2,7 @@ meta:
   product: "Probel Store (Probel Colchões de Canasvieiras)"
   version: "1.0.0"
   created: 2026-10-17
-  updated: 2026-10-17
+   updated: 2026-10-24
   implemented: 2026-10-17 # src/lib/analytics.ts (EVENTS + trackSearch, trackViewItem, trackWhatsAppLead, trackPageView)
   owner: "Guilherme (marketing)"
   destinations: [ga4, google_ads, meta_pixel]

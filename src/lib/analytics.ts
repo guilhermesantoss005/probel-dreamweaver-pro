@@ -5,6 +5,7 @@
  */
 import type { Produto } from "@/data/products";
 import { GOOGLE_ADS_WHATSAPP_CONVERSION } from "@/config/analytics";
+import { recordConversionConsent } from "@/lib/privacy";
 
 type Params = Record<string, unknown>;
 
@@ -51,7 +52,7 @@ export type ProdutoTracking = Pick<Produto, "slug" | "nome" | "categoria">;
 // A tag do Google (gtag.js + gtag('config')) vem no <head> renderizado pelo servidor:
 // src/routes/__root.tsx + src/config/analytics.ts. Nada aqui injeta script.
 
-/** undefined até a primeira página; o page_view dela vem do gtag('config'). */
+/** Primeira página permitida e navegações internas, sem replay de ações bloqueadas. */
 let lastPageLocation: string | undefined;
 
 function analyticsWindow() {
@@ -76,7 +77,7 @@ export function trackPageView() {
   lastPageLocation = href;
 }
 
-function send(event: Exclude<EventName, "page_view">, params: Params, metaParams: Params) {
+function send(event: Exclude<EventName, "page_view">, params: Params, _metaParams: Params) {
   const w = analyticsWindow();
   if (!w?.probelPrivacy?.allowed()) return;
   w.gtag?.("event", event, params);
@@ -111,6 +112,8 @@ export function trackViewItem(produto: ProdutoTracking) {
 
 /** Clique em qualquer botão de WhatsApp: é a conversão principal (GA4 key event → Google Ads). */
 export function trackWhatsAppLead(ctaLocation: CtaLocation, produto?: ProdutoTracking) {
+  const w = analyticsWindow();
+  if (!w?.probelPrivacy?.allowed() || !recordConversionConsent()) return;
   const productParams = produto
     ? { product_id: produto.slug, product_name: produto.nome, product_category: produto.categoria }
     : {};
@@ -119,8 +122,6 @@ export function trackWhatsAppLead(ctaLocation: CtaLocation, produto?: ProdutoTra
     { lead_source: "whatsapp", cta_location: ctaLocation, ...productParams },
     produto ? { content_ids: [produto.slug], content_name: produto.nome } : {},
   );
-  const w = analyticsWindow();
-  if (!w?.probelPrivacy?.allowed()) return;
   w.gtag?.("event", "conversion", {
     send_to: GOOGLE_ADS_WHATSAPP_CONVERSION,
   });
