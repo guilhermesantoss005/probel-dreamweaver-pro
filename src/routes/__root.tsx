@@ -124,10 +124,9 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
-        {/* Google tag (gtag.js), renderizada pelo servidor para o verificador do
-            Google Ads / GA4 encontrar a tag no HTML entregue. */}
-        {/* Inert until the regional check permits tracking; no Google request before then. */}
-        <script id="probel-google-tag" async data-src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        {/* Google tag (gtag.js), renderizada pelo servidor e carregada sempre: o verificador
+            do Google lê o HTML entregue. O consentimento é tratado no snippet inline. */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
         <script dangerouslySetInnerHTML={{ __html: GA_INLINE_SNIPPET }} />
       </head>
       <body>
@@ -143,8 +142,8 @@ function RootComponent() {
   // resolvedLocation só muda depois que a nova rota renderizou, então o título já está atualizado.
   const resolvedHref = useRouterState({ select: (state) => state.resolvedLocation?.href });
 
-  // O page_view da primeira página vem do gtag('config') no <head>; este efeito
-  // cobre só as navegações internas (ver trackPageView).
+  // O config do GA4 usa send_page_view: false; trackPageView envia o page_view de toda
+  // página, inclusive a primeira, e de novo quando o visitante aceita a medição.
   useEffect(() => {
     if (resolvedHref) trackPageView();
     window.addEventListener("probel:privacy-change", trackPageView);

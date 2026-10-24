@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { CONSENT_NOTICE, requiresConsent } from "@/config/consent";
-import { readConsent, saveConsent } from "@/lib/privacy";
+import { readConsent, resolveVisitorRegion, saveConsent } from "@/lib/privacy";
 
 export function PrivacyNotice() {
   const [open, setOpen] = useState(false);
@@ -16,6 +16,7 @@ export function PrivacyNotice() {
     sync();
     window.addEventListener("probel:privacy-change", sync);
     window.addEventListener("probel:privacy-settings", show);
+    void resolveVisitorRegion();
     return () => {
       window.removeEventListener("probel:privacy-change", sync);
       window.removeEventListener("probel:privacy-settings", show);

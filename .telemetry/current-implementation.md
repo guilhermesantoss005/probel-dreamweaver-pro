@@ -1,6 +1,10 @@
 ## Current Implementation
 
-### Update 2026-10-24 (supersedes historical notes below)
+### Update 2026-10-24, afternoon (supersedes the gating described in the morning note)
+- gtag.js is server-rendered with a real `src` and loads on every page. Consent Mode v2 sets the defaults: denied for the EU/EEA/UK/CH via Google's `region` parameter, granted elsewhere (`ad_personalization` always denied). A saved choice or GPC/DNT is applied with `consent update` before `config`. There is no `ga-disable-*`.
+- The visitor region (used only for the notice and for our own event gating) comes from the `getVisitorRegion` server function reading `x-vercel-ip-country` / `cf-ipcountry`. An unknown region is not regulated.
+
+### Update 2026-10-24, morning (historical)
 - One server-rendered, initially inert Google script element; its data-src activates after same-origin /cdn-cgi/trace (2s) and the latest stored privacy decision permit tracking.
 - Public constants: GA4 G-31EFTQ7Q9H; Ads AW-16680866532; direct WhatsApp conversion AW-16680866532/x4bvCKHSrKgdEOSlh5I-.
 - Default deny, regional notice, equal accept/reject, withdrawal, cross-tab synchronization and GPC/DNT opt-outs. Matching disabled. No Meta installation.

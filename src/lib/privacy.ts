@@ -1,4 +1,5 @@
 import { CONSENT_KEY, CONSENT_NOTICE } from "@/config/consent";
+import { getVisitorRegion } from "@/lib/region.functions";
 
 export type ConsentRecord = {
   visitor: string;
@@ -32,6 +33,21 @@ export function saveConsent(choice: "granted" | "denied") {
   catch { return false; }
   window.probelPrivacy?.apply();
   return true;
+}
+/**
+ * Região do visitante, usada só para mostrar o aviso a quem está nas regiões reguladas.
+ * O padrão de consentimento do Google não depende disso: o Google aplica a própria geolocalização.
+ */
+export async function resolveVisitorRegion() {
+  const state = window.probelPrivacy;
+  if (!state || state.ready) return;
+  try {
+    state.region = (await getVisitorRegion()).region;
+  } catch {
+    state.region = null;
+  }
+  state.ready = true;
+  window.dispatchEvent(new Event("probel:privacy-change"));
 }
 export function openPrivacySettings() {
   window.dispatchEvent(new Event("probel:privacy-settings"));

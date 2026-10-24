@@ -110,7 +110,7 @@ export function trackViewItem(produto: ProdutoTracking) {
   );
 }
 
-/** Clique em qualquer botão de WhatsApp: é a conversão principal (GA4 key event → Google Ads). */
+/** Clique em qualquer botão de WhatsApp: generate_lead no GA4 + conversão "Contato" direta no Google Ads. */
 export function trackWhatsAppLead(ctaLocation: CtaLocation, produto?: ProdutoTracking) {
   const w = analyticsWindow();
   if (!w?.probelPrivacy?.allowed() || !recordConversionConsent()) return;

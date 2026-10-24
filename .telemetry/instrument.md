@@ -1,7 +1,12 @@
 # Guia de instrumentação: Google tag (gtag.js), GA4 + Google Ads
 
-## Atualização 2026-10-24 — substitui as instruções antigas abaixo
-- O snippet inicial nega consentimento e ativa o único elemento Google no head após a verificação regional e a decisão atual permitirem medição. A tag fica inerte antes disso.
+## Atualização 2026-10-24 (tarde): Consent Mode v2, que substitui o bloqueio da manhã
+- O bloqueio da manhã travava todo mundo no domínio dos anúncios: `/cdn-cgi/trace` só existe na Cloudflare e dá 404 na Vercel, então a região ficava `null`, `null` era tratado como região regulada, e a tag ficava desligada por `ga-disable-*` sem nunca carregar o gtag.js.
+- Agora o gtag.js carrega **sempre**, no `<head>` do servidor. Ordem no snippet: `consent default` negado para UE/EEE/UK/CH (`region`, geolocalização do Google) → `consent default` concedido para o resto (Brasil incluso; `ad_personalization` sempre negado) → `consent update` com a escolha salva (ou negado com GPC/DNT) → `js` → `config` GA4 (`send_page_view: false`) → `config` Ads.
+- Sem `ga-disable-*` e sem `data-src`. Região desconhecida não é regulada.
+- Região do aviso: server function `getVisitorRegion` (`x-vercel-ip-country` na Vercel, `cf-ipcountry` na Lovable). Serve só para mostrar o aviso e bloquear nossos eventos para quem está nas regiões reguladas e ainda não escolheu.
+
+## Atualização 2026-10-24 (manhã), já superada no consentimento; o resto continua valendo
 - Conversão direta Contato: AW-16680866532/x4bvCKHSrKgdEOSlh5I-, somente clique no WhatsApp; não visita a /contato.
 - generate_lead continua no GA4 para análise. Não importar esse mesmo evento como outra conversão principal no Ads: isso duplicaria o resultado. A conta ainda precisa ser conferida.
 - Configurações de privacidade no rodapé; política em /privacidade; registros locais do visitante, data, região, aviso e escolhas, com referência em cada conversão permitida.
