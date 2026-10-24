@@ -17,6 +17,7 @@ import { Route as ColchoesRouteImport } from './routes/colchoes'
 import { Route as ConjuntosBoxRouteImport } from './routes/conjuntos-box'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TravesseirosRouteImport } from './routes/travesseiros'
 import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
@@ -61,6 +62,11 @@ const OfertasRoute = OfertasRouteImport.update({
   path: '/ofertas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/conjuntos-box': typeof ConjuntosBoxRoute
   '/contato': typeof ContatoRoute
   '/ofertas': typeof OfertasRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/travesseiros': typeof TravesseirosRoute
   '/produto/$slug': typeof ProdutoSlugRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/conjuntos-box': typeof ConjuntosBoxRoute
   '/contato': typeof ContatoRoute
   '/ofertas': typeof OfertasRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/travesseiros': typeof TravesseirosRoute
   '/produto/$slug': typeof ProdutoSlugRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/conjuntos-box': typeof ConjuntosBoxRoute
   '/contato': typeof ContatoRoute
   '/ofertas': typeof OfertasRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/travesseiros': typeof TravesseirosRoute
   '/produto/$slug': typeof ProdutoSlugRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/conjuntos-box'
     | '/contato'
     | '/ofertas'
+    | '/privacidade'
     | '/sobre'
     | '/travesseiros'
     | '/produto/$slug'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/conjuntos-box'
     | '/contato'
     | '/ofertas'
+    | '/privacidade'
     | '/sobre'
     | '/travesseiros'
     | '/produto/$slug'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/conjuntos-box'
     | '/contato'
     | '/ofertas'
+    | '/privacidade'
     | '/sobre'
     | '/travesseiros'
     | '/produto/$slug'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   ConjuntosBoxRoute: typeof ConjuntosBoxRoute
   ContatoRoute: typeof ContatoRoute
   OfertasRoute: typeof OfertasRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   SobreRoute: typeof SobreRoute
   TravesseirosRoute: typeof TravesseirosRoute
   ProdutoSlugRoute: typeof ProdutoSlugRoute
@@ -231,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfertasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -264,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConjuntosBoxRoute: ConjuntosBoxRoute,
   ContatoRoute: ContatoRoute,
   OfertasRoute: OfertasRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   SobreRoute: SobreRoute,
   TravesseirosRoute: TravesseirosRoute,
   ProdutoSlugRoute: ProdutoSlugRoute,
