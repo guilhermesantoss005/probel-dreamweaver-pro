@@ -1,7 +1,7 @@
 # Roadmap
 
 ## Aberto
-- (nenhum)
+- Configurar conversão Google Ads no clique de WhatsApp, aviso regional e política de privacidade; testar consentimento e envio.
 
 ## Concluído
 - Barra do topo: texto "Pré Black Friday" e link "Ver ofertas" removido.
