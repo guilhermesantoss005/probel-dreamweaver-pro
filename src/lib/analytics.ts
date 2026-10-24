@@ -4,6 +4,7 @@
  * Plano de tracking: .telemetry/tracking-plan.yaml
  */
 import type { Produto } from "@/data/products";
+import { GOOGLE_ADS_WHATSAPP_CONVERSION } from "@/config/analytics";
 
 type Params = Record<string, unknown>;
 
@@ -64,17 +65,12 @@ function analyticsWindow() {
  */
 export function trackPageView() {
   const w = analyticsWindow();
-  if (!w) return;
+  if (!w?.probelPrivacy?.allowed()) return;
   const href = w.location.href;
-  // Primeira página: o gtag('config') do <head> já enviou o page_view.
-  if (lastPageLocation === undefined) {
-    lastPageLocation = href;
-    return;
-  }
   if (href === lastPageLocation) return;
   w.gtag?.("event", EVENTS.PAGE_VIEW, {
     page_location: href,
-    page_referrer: lastPageLocation,
+    page_referrer: lastPageLocation || document.referrer,
     page_title: document.title,
   });
   lastPageLocation = href;
@@ -82,9 +78,9 @@ export function trackPageView() {
 
 function send(event: Exclude<EventName, "page_view">, params: Params, metaParams: Params) {
   const w = analyticsWindow();
-  if (!w) return;
+  if (!w?.probelPrivacy?.allowed()) return;
   w.gtag?.("event", event, params);
-  w.fbq?.("track", META_EVENTS[event], metaParams);
+  // No Meta Pixel is installed; do not share data with an undisclosed recipient.
 }
 
 export function trackSearch(searchTerm: string) {
@@ -123,4 +119,9 @@ export function trackWhatsAppLead(ctaLocation: CtaLocation, produto?: ProdutoTra
     { lead_source: "whatsapp", cta_location: ctaLocation, ...productParams },
     produto ? { content_ids: [produto.slug], content_name: produto.nome } : {},
   );
+  const w = analyticsWindow();
+  if (!w?.probelPrivacy?.allowed()) return;
+  w.gtag?.("event", "conversion", {
+    send_to: GOOGLE_ADS_WHATSAPP_CONVERSION,
+  });
 }
