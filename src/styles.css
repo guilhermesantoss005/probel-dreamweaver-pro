@@ -71,6 +71,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-ink: var(--ink);
+  --color-promo: var(--promo);
 }
 
 :root {
@@ -80,6 +81,7 @@
   --blue: oklch(0.55 0.135 252);
   --blue-soft: oklch(0.93 0.025 250);
   --ink: oklch(0.16 0.012 260);
+  --promo: oklch(0.72 0.19 52);
   --background: oklch(1 0 0);
   --foreground: oklch(0.24 0.03 258);
   --card: oklch(1 0 0);
